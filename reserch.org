@@ -2,15 +2,19 @@
 ** Research theory of NN and Convolution NN and send me a short research in order to set a common theme (draft of 2-5 pages)
 *** convolution neural network
 **** History
-     concept of Neural networks originated in 1950 in the form of mathematical models inspired by the biology of Neuron cell.
-     Neuron was originally used to model simple mathematical operation and as such was faced with criticism regarding its computational possibilities. One of the sources of this criticism was Marvin Minsky, which proposed a simple problem of xor which was this model unable to solve. This criticism stunned the innovation of Neural networks for over a decade.
-     [[missing desciption of preceptron]]
-     even with all the advancement of Preceptron, which offered powerful computational model that enable to solve many technical problems, the promise of usage of potential that was promised by its biological counterparts was still sorely lacking.
-     [[explain what was possible and why it wasn't enogh]]
-     In hindsight there were two problems with this approach. Firstly there weren't enough data and secondly the technology (computational power as well as computational techniques) at that time weren't powerful enough to train sufficiently large and complex networks. Both of these were bridged by introduction of methods that fall under umbrella term Deep Learning (specifically Deep neural network). The word deep signifies that depth (number of hidden layers) of these networks is large. First problem was solved simply by availability of more data. These were obtained mainly thanks to effort of large companies (Google, Facebook, Youtube, etc.) but also with effort of large community of professionals and hobbyists of data science.
-     Both innovation in computational hardware and improvement of training methods were needed to solve the second problem. One of the technical breakthroughs was utilization of General-Purpose computing on Graphics Processing Units (GPGPU). Thanks to the fact that training process of Neural networks is basically large number of simple consequent computations there is a great potential for parallelization. Which is specifically true in case of Convolutional neural networks.
+concept of Neural networks originated in 1950 in the form of mathematical models inspired by the biology of Neuron cell.
+Neuron was originally used to model simple mathematical operation and as such was faced with criticism regarding its computational possibilities. One of the sources of this criticism was Marvin Minsky, which proposed a simple problem of xor which was this model unable to solve. This criticism stunned the interest in Neural networks for over a decade.
+Rejuvination of this innovation
+[[missing desciption of preceptron]]
 
-    [[Convolution Neural networks are typically networks with many hidden layers that are using convolution of inputs as the means to propagate the signal through network.]]
+even with all the advancement of Preceptron, which offered powerful computational model that enable to solve many technical problems, the promise of usage of potential that was promised by its biological counterparts was still sorely lacking.
+
+[[explain what was possible and why it wasn't enogh]]
+
+In hindsight there were two problems with this approach. Firstly there weren't enough data and secondly the technology (computational power as well as computational techniques) at that time weren't powerful enough to train sufficiently large and complex networks. Both of these were bridged by introduction of methods that fall under umbrella term Deep Learning (specifically Deep neural network). The word deep signifies that depth (number of hidden layers) of these networks is large. First problem was solved simply by availability of more data. These were obtained mainly thanks to effort of large companies (Google, Facebook, Youtube, etc.) but also with effort of large community of professionals and hobbyists of data science.
+Both innovation in computational hardware and improvement of training methods were needed to solve the second problem. One of the technical breakthroughs was utilization of General-Purpose computing on Graphics Processing Units (GPGPU). Thanks to the fact that training process of Neural networks is basically large number of simple consequent computations there is a great potential for parallelization. Which is specifically true in case of Convolutional neural networks.
+
+[[Convolution Neural networks are typically networks with many hidden layers that are using convolution of inputs as the means to propagate the signal through network.]]
 ** Attempt to find several basic articles (of type overview), which connects problematic CNN
 ** Take a look at what are the options of Matlab, regarding Deep learning / CNN
    There is wide variety of options of frameworks for machine learning in general and also for CNN specifically. There is strong unwillingness from my side to work with Matlab and therefore I would prefer some other possibilities.
