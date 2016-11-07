@@ -49,7 +49,9 @@ Namely there is a variety of tools that are centered around python. All of the f
 
 ** python
     Theano - Optimized and efficient open sourced python library that is widely used for computation with multi-dimensional arrays for thee needs of Machine learning.
+
     TensorFlow - Open source library developed by Google for numerical computations using data flow graphs.
+
     keras - High level Neural Network library that can run on top of either TensorFlow or Theano.
 
 ** Lua
@@ -57,6 +59,7 @@ Namely there is a variety of tools that are centered around python. All of the f
 
 ** C++
     OpenCV - C++ library for computer vision and machine learning.
+
     Caffe - Deep learning framework. Also supports python API.
 
 ** Matlab
