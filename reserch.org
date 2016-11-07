@@ -1,17 +1,17 @@
 * Tasks:
 ** Research theory of NN and Convolution NN and send me a short research in order to set a common theme (draft of 2-5 pages)
 *** convolution neural network
-    CNNs are specialized type of Artificial Neural Networks that were originally devised for image processing applications. Where was taken advantage of their two dimensional character. Since then they were also very successfully employed in natural language and Video processing.
+    *CNNs* are specialized type of *Artificial Neural Networks* that were originally devised for image processing applications. Where was taken advantage of their two dimensional character. Since then they were also very successfully employed in natural language and Video processing.
 **** History
-Evolution of Artificial Neural Network concept began with Warren McCulloch and Walter Pitts in 1943, when they devised mathematical models inspired by the biology of Neuron cell. This inspired the invention of Perceptron, created in 1958 by Frank Rosenblatt. With a very simple model of Artificial Neuron that was modeled based on biological Neuron. This model has variable number of weighted inputs which are squashed through nonlinear function to produce output (typically bounded between values (0,1) or (-1,1)).
+Evolution of *Artificial Neural Network* concept began with Warren McCulloch and Walter Pitts in 1943, when they devised mathematical models inspired by the biology of Neuron cell. This inspired the invention of *Perceptron*, created in 1958 by Frank Rosenblatt. With a very simple model of *Artificial Neuron* that was modeled based on biological *Neuron*. This model has variable number of weighted inputs which are squashed through nonlinear function to produce output (typically bounded between values (0,1) or (-1,1)).
 
-From the start Perceptron seamed promising, but it was soon discovered that it has severe limitations which prevent it from being used to classify even slightly more complicated problems. Most prominent voice of criticism was Marvin Minsky, who published book called Perceptrons. The criticism was centered around the fact that there was no efficient way how to train Perceptron to solve complex problems and also contained mathematical proof that Perceptron is unable to solve simple XOR problem (in other words that it can only solve linearly separable problems). Even thought according to Minsky this criticism wasn't malicious, it stifled the interest in Neural Networks for over a decade.
- Interest in NN was rejuvenated in the early 80 by the invention of *Backpropagation* learning algorithm, which enabled the possibility to use multiple Perceptrons to form networks. Perceptrons could also be stacked upon each other to form layers. Neural networks of this type are commonly called Multilayer Perceptron.
+From the start *Perceptron* seamed promising, but it was soon discovered that it has severe limitations which prevent it from being used to classify even slightly more complicated problems. Most prominent voice of criticism was Marvin Minsky, who published book called Perceptrons. The criticism was centered around the fact that there was no efficient way how to train *Perceptron* to solve complex problems and also contained mathematical proof that *Perceptron* is unable to solve simple XOR problem (in other words that it can only solve linearly separable problems). Even thought according to Minsky this criticism wasn't malicious, it stifled the interest in Neural Networks for over a decade.
+ Interest in NN was rejuvenated in the early 80 by the invention of *Backpropagation* learning algorithm, which enabled the possibility to use multiple Perceptrons to form networks. Perceptrons could also be stacked upon each other to form layers. Neural networks of this type are commonly called *Multilayer Perceptron*.
  This simple improvement addressed majority of previously raised concerns and enable the application of NN in many different technical domains with moderate success.
-In 80 and 90 the interest in NN plateaued again, and general research of AI was more focused on other (typically of less complex nature) machine learning techniques. In the realm of classification problems it were notably Support Vector Machines (SVM), Ensemble methods and Decision trees (Random Forest). AI research community also developed several other concepts of Neural Networks that were similarly inspired by biology human brain but took slightly different approach. Notably Self Organizing Maps (SOM) and Recursive Networks (e.g Hopfields Networks).
+In 80 and 90 the interest in NN plateaued again, and general research of AI was more focused on other (typically of less complex nature) machine learning techniques. In the realm of classification problems it were notably *Support Vector Machines* (SVM), *Ensemble methods* and *Decision trees* (*Random Forest*). AI research community also developed several other concepts of *Neural Networks* that were similarly inspired by biology human brain but took slightly different approach. Notably *Self Organizing Maps* (SOM) and *Recursive Networks* (e.g *Hopfields Networks*).
 
 
-even with all the advancement of Perceptron, which offered powerful computational model that enable to solve many technical problems, the promise of usage of
+even with all the advancement of *Perceptron*, which offered powerful computational model that enable to solve many technical problems, the promise of usage of
 
 In the attempt to solve the mystery of how the human brains works and where the intelligence comes from. There were historically two philosophically different approaches. Bottom Up and Top Down.
 ** Bottom Up
@@ -19,16 +19,14 @@ In the attempt to solve the mystery of how the human brains works and where the 
 ** Top Down
    Top down approach constitutes the effort to describe function of human brain in high level concepts and implement those progressively into more specific details.
 
-* describe connection between CNNs and visual cortex
-
+* describe connection between *CNNs* and visual cortex
 
 potential that was promised by its biological counterpart was still sorely lacking.
 
 [[explain what was possible and why it wasn't enogh]]
 
-
-In hindsight there were two problems with this approach. Firstly there weren't enough data and secondly the technology (computational power as well as computational techniques) at that time weren't powerful enough to train sufficiently large and complex networks. Both of these were bridged by introduction of methods that fall under umbrella term Deep Learning (specifically Deep neural network). The word deep signifies that depth (number of hidden layers) of these networks is large. First problem was solved simply by availability of more data. These were obtained mainly thanks to effort of large companies (Google, Facebook, Youtube, etc.) but also with effort of large community of professionals and hobbyists of data science.
-Both innovation in computational hardware and improvement of training methods were needed to solve the second problem. One of the technical breakthroughs was utilization of General-Purpose computing on Graphics Processing Units (GPGPU). Thanks to the fact that training process of Neural networks is basically large number of simple consequent computations there is a great potential for parallelization. Which is specifically true in case of Convolutional neural networks.
+In hindsight there were two problems with this approach. Firstly there weren't enough data and secondly the technology (computational power as well as computational techniques) at that time weren't powerful enough to train sufficiently large and complex networks. Both of these were bridged by introduction of methods that fall under umbrella term *Deep Learning* (specifically *Deep neural network*). The word deep signifies that depth (number of hidden layers) of these networks is large. First problem was solved simply by availability of more data. These were obtained mainly thanks to effort of large companies (Google, Facebook, Youtube, etc.) but also with effort of large community of professionals and hobbyists of data science.
+Both innovation in computational hardware and improvement of training methods were needed to solve the second problem. One of the technical breakthroughs was utilization of *General-Purpose computing on Graphics Processing Units* (*GPGPU*). Thanks to the fact that training process of Neural networks is basically large number of simple consequent computations there is a great potential for parallelization. Which is specifically true in case of Convolutional neural networks.
 
 [[Convolution Neural networks are typically networks with many hidden layers that are using convolution of inputs as the means to propagate the signal through network.]]
 
@@ -36,9 +34,9 @@ Both innovation in computational hardware and improvement of training methods we
 **** Problems with Classical Neural Network
 **** Convolutional Neural Networks
  Problem with fully connected neural networks is theirs computationally complexity. With raising number of hidden layers the tuning of parameters (learning) gets exponentially more complex.
- This problem can be tackled by Convolutional Neural Networks, which are using its capability to
- convolution neural network typically don't employ fully connected network. Usually complexity of this operation is proportionally to number of inputs. Another beneficial property of CNNs is that they take advantage of two dimensional characteristic of image data.
-***** Structure of CNN
+ This problem can be tackled by *Convolutional Neural Networks*, which are using its capability to
+ convolution neural network typically don't employ fully connected network. Usually complexity of this operation is proportionally to number of inputs. Another beneficial property of *CNNs* is that they take advantage of two dimensional characteristic of image data.
+***** Structure of *CNN*
       Structure of Convolutional networks is typically composed of three different types of layers. Stack of the layers can pretty much arbitrarily combine different types of layers with exception of Fully-Connected layers, which always come last.
 
 ****** Convolutional
@@ -51,9 +49,9 @@ Both innovation in computational hardware and improvement of training methods we
 ****** Fully-Connected
        Fully-Connected layer is typical layer from classical Neural Network and it is always located on the end of the layer stack. In other words it is never followed by another Convolutional layer.
 
-** Attempt to find several basic articles (of type overview), which connects problematic CNN
+** Attempt to find several basic articles (of type overview), which connects problematic *CNN*
 ** Potential Frameworks
-   There is wide variety of options of frameworks for machine learning in general and also for CNN specifically.
+   There is wide variety of options of frameworks for machine learning in general and also for *CNN* specifically.
 Namely there is a variety of tools that are centered around python.
 
 *** python
