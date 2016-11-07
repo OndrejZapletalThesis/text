@@ -1,0 +1,4 @@
+​Dobry den, Omlouvam se ze jsem se neozval drive. Nechtel jsem se ozyvat dokud nebudu mit neco konkretniho co vam muzu poslat a trvalo mi to dele nez jsem cekal.
+
+Prosel jsem si vsechny ty nastroje co jsem uvedl v textu ale jeste jsem se uplne nerozhodl, ktery by byl idealni. Rekl bych ze obdobne jako u ostanich metod strojoveho uceni je nejvice frameworku pro python (a nebo ma alsepon nejake python API). Ja osobne nejsem moc velky fanda MATLABu, takze pokud bych si mohl vybrat, tak bych se mu rad vyhnul.
+Dalsi vec co by jsem s vami rad probral jsou nejake otazky ohledne hardwaru. Jestli by potenciálně nebylo možné využít nějaké školní výbaveni. Já mám momentálně k dispozici jenom laptop a právě  ty konvolucni sítě si o tu masivní parallelism říkají.
