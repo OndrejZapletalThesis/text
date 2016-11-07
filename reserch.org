@@ -8,50 +8,41 @@ Evolution of *Artificial Neural Network* concept began with Warren McCulloch and
 From the start *Perceptron* seamed promising, but it was soon discovered that it has severe limitations which prevent it from being used to classify even slightly more complicated problems. Most prominent voice of criticism was Marvin Minsky, who published book called Perceptrons. The criticism was centered around the fact that there was no efficient way how to train *Perceptron* to solve complex problems and also contained mathematical proof that *Perceptron* is unable to solve simple XOR problem (in other words that it can only solve linearly separable problems). Even thought according to Minsky this criticism wasn't malicious, it stifled the interest in Neural Networks for over a decade.
  Interest in NN was rejuvenated in the early 80 by the invention of *Backpropagation* learning algorithm, which enabled the possibility to use multiple Perceptrons to form networks. Perceptrons could also be stacked upon each other to form layers. Neural networks of this type are commonly called *Multilayer Perceptron*.
  This simple improvement addressed majority of previously raised concerns and enable the application of NN in many different technical domains with moderate success.
-In 80 and 90 the interest in NN plateaued again, and general research of AI was more focused on other (typically of less complex nature) machine learning techniques. In the realm of classification problems it were notably *Support Vector Machines* (SVM), *Ensemble methods* and *Decision trees* (*Random Forest*). AI research community also developed several other concepts of *Neural Networks* that were similarly inspired by biology human brain but took slightly different approach. Notably *Self Organizing Maps* (SOM) and *Recursive Networks* (e.g *Hopfields Networks*).
+In 80 and 90 the interest in NN plateaued again, and general research of AI was more focused on other (typically of less complex nature) machine learning techniques. In the realm of classification problems it were notably *Support Vector Machines* (SVM), *Ensemble methods* and *Decision trees* (*Random Forest*). AI research community also developed several other concepts of *Neural Networks* that were similarly inspired by biology of human brain but took different approach. Notably *Self Organizing Maps* (SOM) and *Recursive Networks* (e.g *Hopfields Networks*).
+By the year of 2000 was very few research facilities that were devoting enough attention to the Neural Networks. There was also certain disdain for Neural Networks in academia and AI research community. Success of Neural Networks that was promised almost half a century ago was finally encountered around 2006, when the first Networks with large number of hidden layers was successfully trained. This lead to mainstream adaption of umbrella term *Deep Learning* (specifically *Deep neural network*). The word deep signifies that depth (number of hidden layers) of these networks is large. The key theoretical insight was that to learn complicated functions that can represent high-level abstractions (e.g vision, language understanding etc.) there is a need for deep architecture (deep in this context can mean number of layers in order of 10^1 to 10^3). Even though that progress of Neural Network into direction of structures with high number of hidden layers was obvious, its training was unsolved technological problem. There were basically two reason why this breakthrough didn't come sooner. Firstly there weren't enough data to effectively train the Neural Network. Secondly the technology (computational hardware) until then weren't powerful enough to train sufficiently large and complex networks and also the training techniques used in Multilayer Perceptron sufficient for deep networks.
+First problem was solved simply by availability of more data, which were obtained mainly thanks to effort of large companies (Google, Facebook, Youtube, etc.) but also with effort of large community of professionals and hobbyists of data science.
+Both innovation in computational hardware and improvement of training methods were needed to solve the second problem. One of the technical breakthroughs was utilization of *General-Purpose computing on Graphics Processing Units* (*GPGPU*). Thanks to the fact that training process of Neural networks is basically large number of simple consequent computations there is a great potential for parallelization (this is specifically true in case of Convolutional neural networks).
 
+** Deep Learning
+It was found that *Multilayer Fully Connected Neural Networks* are not ideal for image processing needs. One of the main problems is that this structure doesn't have any means to capture the fundamental two-dimensional property of image data with the *classical* network.
+Due to a high complexity of *Fully Connected Neural Network*, it is very difficult to train *Deep Neural Networks* for even small images. Complexity and computational demand grows exponentially with input data. For this reason there was developed new model of neural networks called *Convolutional Neural Networks*.
 
-even with all the advancement of *Perceptron*, which offered powerful computational model that enable to solve many technical problems, the promise of usage of
+*** Convolutional Neural Networks
+    Invention of CNNs was inspired by biology of human visual cortex. In human eye light falls on the cornea of where photosensitive cells generate signal for individual neurons that are connected to these cells. Neuron in visual cortex are typically connected to only few photosensitive cells and are geographically limited (neurons aren't fully connected but are only connected in small area).
+    Therefore *Convolution neural networks* typically aren't fully connected. This has positive effect on computational complexity of network training. Usually complexity of training is rising proportionally (and not exponentially opposed to classical *Fully Connected Neural Networks*) to number of inputs.
 
-In the attempt to solve the mystery of how the human brains works and where the intelligence comes from. There were historically two philosophically different approaches. Bottom Up and Top Down.
-** Bottom Up
-   Development of Neural Networks that were discussed so far is example of bottom up approach. Where it is started with the simplest element of Neuron, which is then connected into ever so slightly more complex networks which are emulating more and more function of the human brain (one of these examples is Neural network used to classify image data and therefore simulate function of human sight)
-** Top Down
-   Top down approach constitutes the effort to describe function of human brain in high level concepts and implement those progressively into more specific details.
-
-* describe connection between *CNNs* and visual cortex
-
-potential that was promised by its biological counterpart was still sorely lacking.
-
-[[explain what was possible and why it wasn't enogh]]
-
-In hindsight there were two problems with this approach. Firstly there weren't enough data and secondly the technology (computational power as well as computational techniques) at that time weren't powerful enough to train sufficiently large and complex networks. Both of these were bridged by introduction of methods that fall under umbrella term *Deep Learning* (specifically *Deep neural network*). The word deep signifies that depth (number of hidden layers) of these networks is large. First problem was solved simply by availability of more data. These were obtained mainly thanks to effort of large companies (Google, Facebook, Youtube, etc.) but also with effort of large community of professionals and hobbyists of data science.
-Both innovation in computational hardware and improvement of training methods were needed to solve the second problem. One of the technical breakthroughs was utilization of *General-Purpose computing on Graphics Processing Units* (*GPGPU*). Thanks to the fact that training process of Neural networks is basically large number of simple consequent computations there is a great potential for parallelization. Which is specifically true in case of Convolutional neural networks.
-
-[[Convolution Neural networks are typically networks with many hidden layers that are using convolution of inputs as the means to propagate the signal through network.]]
-
-*** Deep Learning
-**** Problems with Classical Neural Network
-**** Convolutional Neural Networks
- Problem with fully connected neural networks is theirs computationally complexity. With raising number of hidden layers the tuning of parameters (learning) gets exponentially more complex.
- This problem can be tackled by *Convolutional Neural Networks*, which are using its capability to
- convolution neural network typically don't employ fully connected network. Usually complexity of this operation is proportionally to number of inputs. Another beneficial property of *CNNs* is that they take advantage of two dimensional characteristic of image data.
-***** Structure of *CNN*
-      Structure of Convolutional networks is typically composed of three different types of layers. Stack of the layers can pretty much arbitrarily combine different types of layers with exception of Fully-Connected layers, which always come last.
+**** Structure of *CNN*
+     Structure of Convolutional networks is typically composed of three different types of layers. Stack of the layers can pretty much arbitrarily combine different types of layers with exception of Fully-Connected layers, which always come last.
 
 ****** Convolutional
-       Each layer of this type is processing information from previous layer by convolution of input image with predefined filter. Each Convolutional layer is composed of outputs from applying of multiple different filters. Each of these filters is designed to underline different features of input image.
+       As the name suggest this layer employs convolution. In the convolution terminology first parameter is *input* second parameter is *kernel* and the output is typically called *feature map*. Input into Convolutional layer is either image (in case first layer of network) or *feature map* from previous layer. *Kernel* is typically of square shape and of its width ranging from 3 to n pixels. *Feature map* is created by convolution of *kernel* over entire *input*. Depending on size of *kernal* in order to keep *feature map* of same size as the *input*, *zero padding* is applied on edges of the *input*. *Zero padding* is not necessary but it results in shrinking of *feature map* in each subsequent layer. Another technique how to decrease size of *feature map* is to use *stride*. *Stride* defines number of elements that are skipped in step of *Convolution* (when the *stride* is 1 the size of *feature map* is preserved).
+       Each Convolutional layer is typically composition of several different kernels. In other words output of this layer is tensor containing *feature map* for each used kernel. Each of these  is designed to underline different features of input image. In the first layers these features typically are edges. And the higher the layer the more complex features are captured.
+
+*locally connected*
+*tiled convolution*
+*traditional convolution*
 
 ****** Pooling
-       This layer is used to down sample size of the input layer.
-******* Max-pooling
-        Typically the input layer is divided into smaller equal rectangular matrices which are replaced by its largest element. This way is decreased the size of current layer and the information contained is compressed.
+       This layer is used to down sample size of the input layer. Sometimes this is called the *detector* stage. Output from this layer is created by various combination of inputs. Max-pooling is one of the more prevalent examples. The input is divided into equal rectangular subelements of size larger then 1. Output is then computed as maximal value of each subelement. This decreases the size of output layer while preserving information contained in input layer and effectively compress contained information.
 ****** Fully-Connected
-       Fully-Connected layer is typical layer from classical Neural Network and it is always located on the end of the layer stack. In other words it is never followed by another Convolutional layer.
+       Fully-Connected layer is typical layer from classical Neural Network and it is always located on the end of the layer stack. In other words it is never followed by another Convolutional layer. Effectivity of multiple fully connected layers at the of the CNNs is in some literature questioned.
+
+**** Training
+Training of CNNs if analogical to Fully Connected Neural Network in that both are using *Gradient Decent Methods*. Situation wit *CNNs* is more complicated because network is composed of layers of different types and therefore training technique must accomdate for variability between different layers.
 
 ** Attempt to find several basic articles (of type overview), which connects problematic *CNN*
 ** Potential Frameworks
-   There is wide variety of options of frameworks for machine learning in general and also for *CNN* specifically.
+   There is wide variety of options for machine learning frameworks in general and also for *CNN* specifically.
 Namely there is a variety of tools that are centered around python.
 
 *** python
@@ -68,3 +59,10 @@ Namely there is a variety of tools that are centered around python.
 
 *** Matlab
     MatConvNet
+
+* Use later
+In the attempt to solve the mystery of how the human brains works and where the intelligence comes from. There were historically two philosophically different approaches. Bottom Up and Top Down.
+** Bottom Up
+   Development of Neural Networks that were discussed so far is example of bottom up approach. Where it is started with the simplest element of Neuron, which is then connected into ever so slightly more complex networks which are emulating more and more function of the human brain (one of these examples is Neural network used to classify image data and therefore simulate function of human sight)
+** Top Down
+   Top down approach constitutes the effort to describe function of human brain in high level concepts and implement those progressively into more specific details.
