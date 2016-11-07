@@ -1,6 +1,3 @@
-* Tasks:
-** Research theory of NN and Convolution NN and send me a short research in order to set a common theme (draft of 2-5 pages)
-** Attempt to find several basic articles (of type overview), which connects problematic *CNN*
 * Convolution Neural Network
 *Convolutional Neural Network* (*CNN*) is specialized type of *Artificial Neural Network* that was originally used in image processing applications. Where was taken advantage of their two dimensional character. Since then they were also very successfully employed in natural language and video processing.
 ** History
@@ -64,6 +61,10 @@ Namely there is a variety of tools that are centered around python. All of the f
 
 ** Matlab
     MatConvNet - Matlab toolbox implementing CNNs for computer vision application.
+
+* Tasks:
+** Research theory of NN and Convolution NN and send me a short research in order to set a common theme (draft of 2-5 pages)
+** Attempt to find several basic articles (of type overview), which connects problematic *CNN*
 
 * Use later
 In the attempt to solve the mystery of how the human brains works and where the intelligence comes from. There were historically two philosophically different approaches. Bottom Up and Top Down.

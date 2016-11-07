@@ -1,4 +1,15 @@
-​Dobry den, Omlouvam se ze jsem se neozval drive. Nechtel jsem se ozyvat dokud nebudu mit neco konkretniho co vam muzu poslat a trvalo mi to dele nez jsem cekal.
+​Dobry den,
 
-Prosel jsem si vsechny ty nastroje co jsem uvedl v textu ale jeste jsem se uplne nerozhodl, ktery by byl idealni. Rekl bych ze obdobne jako u ostanich metod strojoveho uceni je nejvice frameworku pro python (a nebo ma alsepon nejake python API). Ja osobne nejsem moc velky fanda MATLABu, takze pokud bych si mohl vybrat, tak bych se mu rad vyhnul.
-Dalsi vec co by jsem s vami rad probral jsou nejake otazky ohledne hardwaru. Jestli by potenciálně nebylo možné využít nějaké školní výbaveni. Já mám momentálně k dispozici jenom laptop a právě  ty konvolucni sítě si o tu masivní parallelism říkají.
+Omlouvam se ze jsem se neozval drive, ale tu resersi se mi podarilo dodelat az ted o vikendu.
+
+Prosel jsem si vsechny ty nastroje co jsem uvedl v te resersi a mam nejake kandidaty, ale jeste jsem se uplne nerozhodl, ktery by byl idealni. Ja osobne nejsem moc velky fanda MATLABu, takze pokud bych si mohl vybrat, tak bych se mu rad vyhnul.
+
+Chtel jsem se s vami domluvit, kdy bych se mohl tento tyden zastavit. Me by to nejvice vyhovovalo v patek, ale teoreticky bych mohl i jiny den v tydnu pokud by to bylo odpoledne.
+
+Dale jsem s vami chtel jeste probrat, jsetli by bylo mozne si nejak zaridit pristup k nejakemu hardwaru skrz skolu. Ja mam momentalne k dispozici jenom laptop, ktery nema vykonou grafickou kartu a prave konvolucni site maji v GPGPU obrovsky potencial.
+
+Diky za odpoved.
+
+S pozdravem,
+
+Ondrej Zapletal
