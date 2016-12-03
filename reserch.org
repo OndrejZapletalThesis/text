@@ -38,25 +38,3 @@
 
 *** Training
     Training of CNN if analogical to Fully Connected Neural Network in that both are using *Gradient Decent Methods*. Situation with *CNN* is more complicated because network is composed of layers of different types and therefore training technique must accommodate for variability between different layers.
-
-* Frameworks
-  There is wide variety of options for machine learning frameworks in general and also for *CNN* specifically.
-Namely there is a variety of tools that are centered around python. All of the frameworks bellow have at least some support for GPGPU computation.
-
-** python
-    Theano - Optimized and efficient open sourced python library that is widely used for computation with multi-dimensional arrays for thee needs of Machine learning.
-
-    TensorFlow - Open source library developed by Google for numerical computations using data flow graphs.
-
-    keras - High level Neural Network library that can run on top of either TensorFlow or Theano.
-
-** Lua
-    Torch - Scientific computing framework with support of wide variety of machine learning algorithms.
-
-** C++
-    OpenCV - Library for computer vision and machine learning.
-
-    Caffe - Deep learning framework. Also supports python API.
-
-** Matlab
-    MatConvNet - Matlab toolbox implementing CNNs for computer vision application.
