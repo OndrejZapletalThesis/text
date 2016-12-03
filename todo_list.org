@@ -1,6 +1,6 @@
 * Tasks:
 ** Research theory of NN and Convolution NN and send me a short research in order to set a common theme (draft of 2-5 pages)
-** Attempt to find several basic articles (of type overview), which connects problematic *CNN*
+** Attempt to find several basic articles (of type overview), which connects domain of *CNN*
 
 * Use later
 In the attempt to solve the mystery of how the human brains works and where the intelligence comes from. There were historically two philosophically different approaches. Bottom Up and Top Down.
