@@ -1,0 +1,10 @@
+* Tasks:
+** Research theory of NN and Convolution NN and send me a short research in order to set a common theme (draft of 2-5 pages)
+** Attempt to find several basic articles (of type overview), which connects problematic *CNN*
+
+* Use later
+In the attempt to solve the mystery of how the human brains works and where the intelligence comes from. There were historically two philosophically different approaches. Bottom Up and Top Down.
+** Bottom Up
+   Development of Neural Networks that were discussed so far is example of bottom up approach. Where it is started with the simplest element of Neuron, which is then connected into ever so slightly more complex networks which are emulating more and more function of the human brain (one of these examples is Neural network used to classify image data and therefore simulate function of human sight)
+** Top Down
+   Top down approach constitutes the effort to describe function of human brain in high level concepts and implement those progressively into more specific details.
