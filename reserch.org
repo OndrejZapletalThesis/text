@@ -38,3 +38,6 @@
 
 *** Training
     Training of CNN if analogical to Fully Connected Neural Network in that both are using *Gradient Decent Methods*. Situation with *CNN* is more complicated because network is composed of layers of different types and therefore training technique must accommodate for variability between different layers.
+
+** BackPropagation algoritm
+most commonly used learnign algoritm is *gradien descent*.
