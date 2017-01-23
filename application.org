@@ -1,0 +1,12 @@
+* Application
+As it was mentioned before convolutional neural networks were  originally designed for image proccessing applications. CNN inception was started by [LeCunn 1989] where they were used to for handwritten diggit recognition from Dataset of Addres codes for postal office. Cocept was succesfully deployed on DSP chip. Expanstion of this applicatoin was used in day to day operation for postal office and in mid 90 it was used to decode Address codes of 10% of mail circuling in USA.
+
+from http://machinelearningmastery.com/inspirational-applications-deep-learning/
+** [[http://cs231n.stanford.edu/reports2016/219_Report.pdf][Automatic colorization of Black and White Images]]
+   Automatic colorization is interseting technical problem where the task is to create coloured image from gray scale input. Automatization of this problem is very velcomded becauset this  task was until reacently very tedious and slow process that was need to be preformed by human operator. 
+This task also seen some success  with _regression models_[*make sure this is correct*], but resulting product was very estecally pleasing. When was this problem tackeled with very deep convolution network it had some very promising results. 
+In this case convolution network was traind in supervised maner. As input were used grey scaled images that were trained with their  coloured version as target.
+
+** [[https://arxiv.org/pdf/1512.08512.pdf][Automatically Adding Sounds To Silent Movies]]
+** [[http://www.nlpr.ia.ac.cn/cip/ZongPublications/2015/IEEE-Zhang-8-5.pdf][Automatic Machine Translation]]
+** Object Classification and Detection in Photographs

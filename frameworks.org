@@ -8,6 +8,8 @@ Namely there is a variety of tools that are centered around python. All of the f
     TensorFlow - Open source library developed by Google for numerical computations using data flow graphs.
 
     keras - High level Neural Network library that can run on top of either TensorFlow or Theano.
+    
+    scikit learn
 
 ** Lua
     Torch - Scientific computing framework with support of wide variety of machine learning algorithms.
@@ -19,3 +21,12 @@ Namely there is a variety of tools that are centered around python. All of the f
 
 ** Matlab
     MatConvNet - Matlab toolbox implementing CNNs for computer vision application.
+    
+
+In term of this Semestral project
+For  the needs of this Semestral Project were selected two different frameworks to test capiabilities of Deep learnigng frameworks.
+
+1. keras with support of Tensor Flow
+2. torch (also possibly its python version pyTorch)
+
+
