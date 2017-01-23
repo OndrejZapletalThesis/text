@@ -1,0 +1,4 @@
+* Abbreviations
+NN - Neural Netowrk(s)
+FCNN - Fully Connected Neural Network
+CNN - Convolutional Neural Network

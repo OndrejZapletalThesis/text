@@ -1,0 +1,23 @@
+* Deep Learning in image processing
+  It was found that *Fully Connected Multilayer Neural Networks* are not ideal for image processing needs.
+The biggest barrier comes from the fact that during training of NN is necessary co compute matrix multiplication for each layer in every iteration cycle.
+This also means that complexity (it needs more space) is increasing rapidly with input resolution (number of input pixels)
+Also
+One of the main problems is that their
+Structure of Fully Connected NN doesn't capture geometric properties input information. In other words because individual layers are fully connected (each output in lower layer is connected to each input in higher layer) networks are not capturing any information about relation of position of individual inputs (image pixels) to each other.
+Third problem is that for higher depth of FCNN increases the likelihood of over-fitting of the network.
+
+of the fundamental two-dimensional property of image data.
+  Due to a high complexity of *Fully Connected Neural Network*, it is very difficult to train *Deep Neural Networks* for even small images. Complexity and computational demand grows exponentially with size of input data. For this reason there was developed new model of neural networks called *Convolutional Neural Networks*.
+** Advantage of CNNs
+Number of parameters
+computational demand
+
+Just one simple example that doesn't correctly represent real word situation but it can be used to illustrate the advantage of CNNs.
+Lets have gray scale input image of size 32x32 pixels and following layer will have 6 feature maps of size 28x28.
+CNN have in first convolution layer kernel of size 5x5. In this case we have totally (5 * 5 + 1) * 6 = 156 connection between the two layers.
+If we would like to create equivalent connection between two layers of FCNN (ignoring the fact 6 feature maps wouldn't make sense in FCNN ), then it would mean (32 * 32 + 1) * 28 * 28 * 6 = 4`821`600 connections. Which means that difference between the two is of 3x10^4 factor.
+Also it must be take into account that this difference would rise exponentially with larger images with more color channels.
+If input size of the image changes to 64x64 and add RGB color then FCNN would require (64 * 64 * 3 + 1) * 28 * 28 * 6 = 57`807`456, while CNN only (5 * 5 * 3 + 1) * 6 = 456.
+Which is difference of 1x10^6 factor.
+To hammer the point home it is also advantages to take a look at the possibility of CNN application in moving picture as well. Analogically to previous examples in case of moving image in time the number of parameters raises with number of images in analyzed video.
