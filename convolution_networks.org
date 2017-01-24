@@ -1,11 +1,14 @@
-#+TITLE:       Convolution Networks
-#+AUTHOR:      Ondrej Zapletal
-#+EMAIL:       ondrej.zapletal.oz@gmail.com
-#+OPTIONS:     H:2 num:t toc:t \n:nil ::t |:t ^:t f:t tex:t
-#+LaTeX_CLASS_OPTIONS: [report,letterpaper,times,12pt,listings-bw,microtype]
-* Convolution Networks
+* Convolutional Networks
+Convolutional networks are arguably most successful biologically inspired models in artificial intelligence. Even though they were guided by many different fields, the core design principles were drawn from neuroscience.
+
+# add description of cat experiment page 364
+
   First documented use of Convolutional Network can be found in [LeCunn 1989]. LeCunn and other were using
-Convolutional Neural Networks were originally deployed in image recognition problems. And were inspired by biology of human visual cortex.
+Convolutional Neural Networks were originally deployed in image recognition problems. And were inspired by biology of human visual(setq org-highlight-latex-and-related '(latex script entities)) cortex.
+
+# As it stands we will presume that convolutional layer is working with rectangular input data. We will strip away the complexity introduced by working with colored images (i.e input ads additional dimension for color channels) Apart from this we will be dealing only with rectangular inputs (e.g images) and forget the fact that Convolutional networks can be also trained to use one dimensional input (e.g sound) or three dimensional (e.g mri images)
+
+Each convolutional layer requires rectangular input and produces rectangular output
 
 ** Convolutional Neural Networks
    /Convolutional Neural Network/ (/CNN/) is specialized type of /Artificial Neural Network/ that was originally used in image processing applications. Where was taken advantage of their two dimensional character. Since then they were also very successfully employed in natural language and video processing.
@@ -31,24 +34,48 @@ Reduction of /feature map/ can go even further in case of use of /stride/. Appli
 
      Each Convolutional layer is typically composition of several different /kernels/. In other words output of this layer is tensor containing /feature map/ for each used kernel. Each of these  is designed to underline different features of input image. In the first layers these features are typically edges. In following layers the higher the layer the more complex features are captured.
 
-     The fact that each convolution on /input/ is using one /kernel/ (_not to be confuse with use of multiple /kernels/ in previous paragraph_) basically means that all connections between two neighboring layers are sharing the same weights. This might not be sufficient in some applications and therefore it is possible to use two other types of connections. /Locally connected/ which basically means that applied /kernel/ is of the same size as the /input/ and /tiled convolution/ which means alternation of more than one set of weights on entire /input/.
+     The fact that each convolution on /input/ is using one /kernel/
+# not to be confuse with use of multiple /kernels/ in previous paragraph
+ basically means that all connections between two neighboring layers are sharing the same weights. This might not be sufficient in some applications and therefore it is possible to use two other types of connections. /Locally connected/ which basically means that applied /kernel/ is of the same size as the /input/ and /tiled convolution/ which means alternation of more than one set of weights on entire /input/.
+
+ Each convolutional layer have non-linearity on its output
+Sometimes this is called the /detector/ stage.
 
 **** Pooling layer
 
-     This layer is used to down sample size of the /input/ layer. Sometimes this is called the /detector/ stage. Output from this layer is created by various combination of /input/. Max-pooling is one of the more prevalent examples. The input is divided into equal rectangular sub-elements of size larger than 1. Output from each sub-element is then selected as maximal value of its individual elements. This decreases the size of output layer while preserving information contained in input layer and effectively compresses contained information.
+     This layer is used to down sample size of the /input/ layer. Output from this layer is created by various combination of /input/. Max-pooling is one of the more prevalent examples. The input is divided into equal rectangular sub-elements of size larger than 1. Output from each sub-element is then selected as maximal value of its individual elements. This decreases the size of output layer while preserving information contained in input layer and effectively compresses contained information.
+# describe different types of pooling:
+# 	Average
+# 	Maximum
+# 	Linear combination
 
 **** Fully-Connected layer
 
-     Fully-Connected layer is typical layer from classical /Feed-forward fully connected Neural Network/ and it is always located on the end of the layer stack. In other words it is never followed by another Convolutional layer. Utility of multiple fully connected layers at the end of the CNN stack is in some literature questioned.
 
-For this moment we will limit are self to explanation of what stages are typically encountered during Network learning.
+     Fully-Connected layer is typical layer from classical /Feed-forward fully connected Neural Network/ and it is always located on the end of the layer stack.
+
+Utility of multiple fully connected layers at the end of the CNN stack is in some literature questioned.
+In other words it is never followed by another Convolutional layer.
+
 
 Convolution
+** Training
+# For this moment we will limit are self to explanation of what stages are typically encountered during Network learning.
+   Training process of /CNN/ is analogues to /FCNN/ in that both are using /Feed-forward/ and _Backward error propagation_ phases.
+
+# is Feed-Forward actual term used in literature ???
+
+Situation with /CNN/ is more complicated because network is composed of different types of layers and therefore training must accommodate for variability between different layers and also the individual convolution layers are sharing weights across all neurons in each layer.
+
+First phase is the /Feed-Forward/ pass where the signal is propagated from inputs of the /CNN/ to its output. In the last layer the output is compared with desired values by /Error function E/ and error is estimated.
+Secondly the Error is propagated backwards through the network and weights for individual layer are updated based on the sum of individual error connections are
+
+Feed /Gradient Decent Methods/.
 
 ** Feed-forward pass
 *** Convolution Layer
 
-Computation of convolution output $x_{ij}^{(l)}$ for point /i/, /j/ is defined as
+    Computation of convolution output $x_{ij}^{(l)}$ for point /i/, /j/ is defined as
 
 $$ x_{ij}^{(l)}=\sum_{a=0}^{m-1}\sum_{b=0}^{m-1}\omega_{ab}y_{(i+a)(j+b)}^{(l-1)}$$
 
@@ -69,29 +96,31 @@ Feed forward operation of pooling layer is generally very simple and it constitu
 
 ** Backward propagation
 *** Convolution Layer
+Backpropagation
+
 $$
   \frac{\partial E}         {\partial \omega_{ab} }
   =\sum_{i=0}^{N-m} \sum_{j=0}^{N-m}
-  \frac{\partial E}          {\partial x_{ij}^{l}  }
-  \frac{\partial x_{ij}^{l}} {\partial \omega_{ab} }
+  \frac{\partial E}          {\partial x_{ij}^{(l)}  }
+  \frac{\partial x_{ij}^{(l)}} {\partial \omega_{ab} }
   =\sum_{i=0}^{N-m} \sum_{j=0}^{N-m}
-  \frac{\partial E}          {\partial x_{ij}^{l}  }
+  \frac{\partial E}          {\partial x_{ij}^{(l)}  }
   y_{(i+a)(j+b)}^{(l-1)}
 $$
 
 $$
-  \frac{\partial E}           {\partial x_{ij}^{l}  }
-  =\frac{\partial E}          {\partial y_{ij}^{l}  }
-   \frac{\partial y_{ij}^{l}} {\partial x_{ij}^{l}  }
-  =\frac{\partial E}          {\partial y_{ij}^{l}  }
-   \frac{\partial }           {\partial x_{ij}^{l}  }
+  \frac{\partial E}           {\partial x_{ij}^{(l)}  }
+  =\frac{\partial E}          {\partial y_{ij}^{(l)}  }
+   \frac{\partial y_{ij}^{(l)}} {\partial x_{ij}^{(l)}  }
+  =\frac{\partial E}          {\partial y_{ij}^{(l)}  }
+   \frac{\partial }           {\partial x_{ij}^{(l)}  }
   \left( \sigma\left(x_{ij}^{(l)}\right) \right)
-  =\frac{\partial E}          {\partial y_{ij}^{l}  }
+  =\frac{\partial E}          {\partial y_{ij}^{(l)}  }
   \sigma' \left( x_{ij}^{(l)} \right)
 $$
 
 $$
-  \frac{\partial E}         {\partial y_{ij}^{l-1} }
+  \frac{\partial E}         {\partial y_{ij}^{(l-1)} }
   =\sum_{a=0}^{m-1} \sum_{b=0}^{m-1}
   \frac{\partial E}          {\partial x_{(i-a)(j-b)}^{(l)} }
   \frac{\partial x_{(i-a)(j-b)}^{(l)} }          {\partial  y_{ij}^{(l-1)}}
@@ -101,6 +130,9 @@ $$
 $$
 
 *** Pooling layer
-** Training
+    # As it was mentioned in section for feed forward pass, there is no learning going on in pooling layer. Since layer only down-samples output this applies in error propagation as well.
+    # Error is propageted backwards depending on how it was propagated forward. In case for max pooling type of layer the error is propagated only to the unit with maximal output in feed forward phase (in other words to the winner of pooling operation). As result of this the error is propagated very sparsely.
 
-    Learning process of CNN is analogues to FCNN in that both are using /Gradient Decent Methods/. Situation with /CNN/ is more complicated because network is composed of layers of different types and therefore training technique must accommodate for variability between different layers.
+# In case of different pooling method it is adjusted accordingly (i.e for average pooling the error is propagated according to contribution of individual neurons).
+ means that
+Back propagation of Error in pooling layer is simply redistribution
