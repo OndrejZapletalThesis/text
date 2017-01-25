@@ -1,7 +1,3 @@
-#+TITLE:       History of Artificial Neural Networks
-#+AUTHOR:      Ondrej Zapletal
-#+EMAIL:       ondrej.zapletal.oz@gmail.com
-#+OPTIONS:     H:2 num:t toc:t \n:nil ::t |:t ^:t f:t tex:t
 * History
 History of /Artificial Neural Network/
   Evolution of /Artificial Neural Network/ concept began with Warren Mcculloch and Walter Pitts in 1943, when they devised mathematical model inspired by the biology of Neuron cell. This inspired the invention of /Perceptron/, created in 1958 by Frank Rosenblatt. /Perceptron/ used very simple model of /Artificial Neuron/ that was modeled based on biological /Neuron/. This model consist of variable number of weighted inputs which summed and squashed through nonlinear function to produce output (typically bounded between values $(0,1)$ or $(-1,1)$).

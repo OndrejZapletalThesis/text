@@ -1,7 +1,7 @@
 * Convolutional Neural Networks
   /CNN/ (/Convolutional Neural Network/) is specialized type of /Artificial Neural Network/ that was originally used in image processing applications. They are arguably most successful models in artificial intelligence inspired in biology. Even though they were guided by many different fields, the core design principles were drawn from neuroscience. Since their success in image processing, they were also very successfully deployed in natural language and video processing applications.
 
-  Aforementioned inspiration in biology was based on scientific work of David Hubel and Torsten Wiesel. Hubel and Wisel were Neurophysiologist who from late 1950 investigated vision system of mammals. In the experiment, that might be considered little gruesome for today's standards, they connected electrodes into brain of anesthetized cat and measured brain response to visual stimuli. They discovered that reaction of neurons in visual cortex was triggered by very narrow line of light shined under specific angle on projection screen for cat to see. They determined that individual neurons from visual cortex are reacting only to very specific features of input image. Hubel and Wiesel were awarded the Nobel Prize in Physiology and Medicine in 1981 for their discovery and their finding inspired design of CNN.
+  Aforementioned inspiration in biology was based on scientific work of David Hubel and Torsten Wiesel. Hubel and Wisel were neurophysiologist who from late 1950 investigated vision system of mammals for several years. In the experiment, that might be considered little gruesome for today's standards, they connected electrodes into brain of anesthetized cat and measured brain response to visual stimuli [C]. They discovered that reaction of neurons in visual cortex was triggered by very narrow line of light shined under specific angle on projection screen for cat to see. They determined that individual neurons from visual cortex are reacting only to very specific features of input image. Hubel and Wiesel were awarded the Nobel Prize in Physiology and Medicine in 1981 for their discovery and their finding inspired design of CNN.
 
 
   There will be several supposition made in order to simplify explanation of the concepts involved:
@@ -20,9 +20,7 @@
 
 Input into Convolutional layer is either image (in case of first network layer) or /feature map/ from previous layer. /Kernel/ is typically of square shape and its width can range from 3 to N pixels (typically /3/, /5/ or /7/). /Feature map/ is created by convolution of /kernel/ over each specified element of /input/. Convolution is described in more detail in section describing training of CNN.
 
-     Depending on the size of /kernel/ and layer's /padding/ preferences the process of convolution can produce /feature map/ of different size than /input/. When the size of output should be preserved it is necessary to employ /zero padding/ on the edges of /input/. /Zero padding/ in this case has to add necessary amount of zero elements around the edges of input. This amount is determined by
-
-     $$p = ((h - 1) / 2)$$
+     Depending on the size of /kernel/ and layer's /padding/ preferences the process of convolution can produce /feature map/ of different size than /input/. When the size of output should be preserved it is necessary to employ /zero padding/ on the edges of /input/. /Zero padding/ in this case has to add necessary amount of zero elements around the edges of input. This amount is determined by $$p = ((h - 1) / 2),$$
 
 where /h/ is width of used /kernel/. In opposite case the /feature map/ is reduced by the $2*p$. Decreasing of the /feature map/ can be in some cases desirable.
 
@@ -49,39 +47,25 @@ As already mentioned another advantage of Max-pooling arises when combined with 
 
      Fully-Connected layer is formed from classical neurons that can be found in /FCNN/ and it is always located at the end of the layer stack. In other words it is never followed by another Convolutional layer. Depending on the size of whole CNN it can have /1/ to /3/ /fully connected/ layers (usually not more than that). Input of the first /FC/ layer has inputs from all neurons from previous layer to all neurons of following layer (hence fully connected). All fully connected layers are together acting as /FCNN/.
 
-** Training
-   Training process of /CNN/ is analogues to /FCNN/ in that both are using /Feed-forward/ and _Backward error propagation_ phases.
-
-   # is Feed-Forward actual term used in literature ???
+** Training of CNN
+   Training process of /CNN/ is analogues to /FCNN/ in that both are using /Forward Propagation/ and /Backward Propagation/ phases.
 
    Situation with /CNN/ is more complicated because network is composed of different types of layers and therefore training must accommodate for variability between different layers and also the individual convolution layers are sharing weights across all neurons in each layer.
 
-First phase is the /Feed-Forward/ pass where the signal is propagated from inputs of the /CNN/ to its output. In the last layer the output is compared with desired values by /Error function E/ and error is estimated.
-Secondly the error is propagated backwards through the network and weights for individual layers are updated by its contribution on the error. Most commonly used algorithm for update of weights is /Gradient Descent/. It is not the only one used but in majority of cases the training algorithm is at least based on /Gradient descent/.
+First phase is the /Forward Propagation/, where the signal is propagated from inputs of the /CNN/ to its output. In the last layer the output is compared with desired values by /Error function E/ and error is estimated.
+Secondly in /Backward Propagation/ phase the error is propagated backwards through the network and weights for individual layers are updated by its contribution on the error. Most commonly used algorithm for update of weights is /Gradient Descent/. It is not the only one used but in majority of cases the training algorithm is at least based on /Gradient descent/.
 
-** Feed-forward pass
+** Forward Propagation
 *** Convolution Layer
 Each convolutional layer has inputs. In case that the layer is first it is network input (e.g image pixels) in other case it are outputs from neurons from previous layer (typically pooling layer).
 
-Lets presume that input of a layer is of size $N x N$ units and /kernel/ is of size $m x m$. Convolution is computed over $(N-m+1) x (N-m+1)$ units (presuming that there is no zero padding)
+Presuming that input of a layer is of size $N x N$ units and /kernel/ is of size $m x m$. Convolution is computed over $(N-m+1) x (N-m+1)$ units (presuming that there is no zero padding).
 
-    Computation of convolution output $x_{ij}^{(l)}$ is defined as
-
-$$ x_{ij}^{(l)}=\sum_{a=0}^{m-1}\sum_{b=0}^{m-1}\omega_{ab}y_{(i+a)(j+b)}^{(l-1)}$$
-
-where $i, j \in (0,N-m+1)$,
-
-/l/ is index of current layer.
-
- $\omega_{ab}$ are weights of layer (/kernel/),
-
-$y_{(i+a)(j+b)}^{(l-1)}$ is output of previous layer
+    Computation of convolution output $x_{ij}^{(l)}$ is defined as $$ x_{ij}^{(l)}=\sum_{a=0}^{m-1}\sum_{b=0}^{m-1}\omega_{ab}y_{(i+a)(j+b)}^{(l-1)},$$ where $i, j \in (0,N-m+1)$, /l/ is index of current layer, $\omega_{ab}$ are weights of layer (/kernel/) and $y_{(i+a)(j+b)}^{(l-1)}$ is output of previous layer.
 
 Output of convolutional layer $y_{ij}^{(l)}$ is computed by squashing of output of convolution operation $x_{ij}^{(l)}$ through non-linearity:
 
-$$ y_{ij}^{(l)}=\sigma(x_{ij}^{(l)})$$
-
-where $\sigma$ represents this non-linear function.
+$$ y_{ij}^{(l)}=\sigma(x_{ij}^{(l)}),$$ where $\sigma$ represents this non-linear function.
 
 *** Pooling layer (Max-Pooling)
     Feed forward operation of pooling layer is generally very simple and it constitutes in selecting of maximal value within subset
@@ -92,7 +76,7 @@ Ratio is typically /4/ to /1/, which means that input matrix is divided into non
 Signal is distributed through /FC/ layer in similar fashion as in Convolutional layer. The main difference being that weights of individual neuron connections are not shared among all neurons in one layer.
 # This might need a special chapter.
 
-** Backward propagation
+** Backward Propagation
 *** Convolution Layer
     # To estimate contribution of convolutional layer to the total error of CNN,
 # there needs to be computed gradient of error function
@@ -129,12 +113,10 @@ $$
 $$
 
 *** Pooling layer
-    As mentioned in section for feed /forward pass/, there is no learning going on in pooling layer. Since layer only down-samples output this applies in error propagation as well.
+    As mentioned in section for /forward Propagation/, there is no explicit learning process happening in pooling layer. Error is propagated backwards depending on how the signal was propagated forward. In case of /Max-pooling/ layer the error is propagated only to the unit with maximal output in /forward propagation/ phase (in other words to the winner of pooling). The error is propagated very sparsely, as result.
 
-    Error is propagated backwards depending on how the signal was propagated forward. In case of /Max-pooling/ layer the error is propagated only to the unit with maximal output in feed forward phase (in other words to the winner of pooling). As result of the error is propagated very sparsely.
-
-    In case of different pooling method it is adjusted accordingly (i.e for average pooling the error is propagated according to contribution of individual neurons).
+    In case of different pooling method it is adjusted accordingly (i.e for /average pooling/ the error is propagated according to contribution of individual neurons).
 
 *** Fully connected layer
-Training mechanism for FC layer if following the same principles as if in FCNN which is not discussed here in detail. It is similar to one for convolution layers and from our perspective is only important that the first (last in the sense of backward propagation) FC layer propagates error gradient of each neuron in it, that is next send to all neurons in preceding (following in the sense of backward propagation) layer.
+Training mechanism for /FC/ layer if following the same principles as if in /FCNN/ which is not discussed here in detail. It is similar to one for convolution layers and from our perspective is only important that the first (last in the sense of /Backward Propagation/) /FC/ layer propagates error gradient of each neuron in it, that is next send to all neurons in preceding (following in the sense of /Backward Propagation/) layer.
 # This might need a special chapter.

@@ -1,29 +1,31 @@
+* Thesis
 This document will layout basic structure of semester project.
 ** Agenda
 ** Preface
 ** Motivation
-
 ** abbreviations
-* Chapters
-** [#A] image processing
-** [#A] history of neural networks
-*** Neuron
-*** Perceptron
-*** Multilayer Perceptron
-** [#A] deep learning
-*** Fully connected Neural Networks
-*** Convolutional Neural Networks
-** [#A] convolution networks
-*** history
-*** convolution
-**** Translation invariance
-*** Pooling
-**** max pooling
-**** other types
-** [#A] application
-** [#B] NN training
+* Master Thesis
+** NN training
 *** feed-forward pass
 *** backward propagation
-** [#C] machine learning
-** [#C] GPGPU
-** [#C] types of nn
+** machine learning
+** GPGPU
+** types of nn
+* Semester Project
+** Chapters
+*** image processing
+*** history of neural networks
+**** Neuron
+**** Perceptron
+**** Multilayer Perceptron
+*** deep learning
+**** Fully connected Neural Networks
+**** Convolutional Neural Networks
+*** convolution networks
+**** history
+**** convolution
+***** Translation invariance
+**** Pooling
+***** max pooling
+***** other types
+*** application
