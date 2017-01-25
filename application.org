@@ -3,18 +3,21 @@
    As it was mentioned before convolutional neural networks were  originally designed for image processing applications. First mention of CNN was in [LeCunn 1989] where they were used for recognition of handwritten digit from dataset of Zip codes from US post. Concept was successfully deployed on DSP chip and tested in real-time application of sorting mail by the zip-code. CNN were in this case one of the first models that was reaching human performance level. Similar techniques were later used to power automatic mail sorting in US Postal Service.
 
    # from http://machinelearningmastery.com/inspirational-applications-deep-learning/
-** [[http://cs231n.stanford.edu/reports2016/219_Report.pdf][Automatic colorization of Black and White Images]]
+
+** [[http://cs231n.stanford.edu/reports2016/219_Report.pdf][Automatic colorization of black and white images]]
    Automatic colorization is interesting technical problem where the task is to create colored image from gray scale input. Any strides in automatization of this process are welcomed because until recently this was very tedious and slow process that need to heavily assisted by human. This task also seen some success  with regression based models, but resulting images wasn't very aesthetically pleasing.
 
    Application of very deep convolutional network managed to deliver very promising results.
 In this case convolution network was trained in supervised manner. As input were used gray scaled images that were trained to categorized detected shapes in gray-scale image to correct color. This technology could be also used to colorize black and white video.
 
-** [[https://arxiv.org/pdf/1512.08512.pdf][Automatically Adding Sounds To Silent Movies]]
+** [[https://arxiv.org/pdf/1512.08512.pdf][Automatically adding sounds to silent movies]]
 
 This is very interesting demonstration of capabilities of state of the art Deep Learning models. Solely based on silent video sequence of drumming stick hitting different surfaces with different textures, the model is capable to guess the sound effect that set hitting produces. Convolutional Neural Network was trained to classify the type of surface being hit from visual cues (vibration of hit surface, movement of particles upon impact and so on). And LSTM Recurrent neural network was trained to reproduce sound patterns most similar to actual sound that was recorded in original video. Produced sounds were tested with human participants that had to distinguish synthesized sound from the real ones. Surprisingly in some cases the model fulled to test subjects.
 
-** [[http://www.nlpr.ia.ac.cn/cip/ZongPublications/2015/IEEE-Zhang-8-5.pdf][Automatic Machine Translation]]
+** [[http://www.nlpr.ia.ac.cn/cip/ZongPublications/2015/IEEE-Zhang-8-5.pdf][Automatic machine translation]]
 
 Convolutional Neural Network were used to detected written text within image scenes and send to large LSTM Recurrent neural network to provide translation. Translated text was then re-rendered back to original image converting foreign text into intelligible (translated). This application was deployed by Google in 2015 to their android devices as extension for Translator application. Feature was called instant visual translation.
 
-** [[http://papers.nips.cc/paper/5207-deep-neural-networks-for-object-detection.pdf][Object Classification and Detection in Photographs]]
+** [[https://arxiv.org/pdf/1411.4389v4.pdf][Automatic written description of scene in image]]
+
+Already familiar combination of CNN and LSTM RNN used in this case to describe scene depicted on image. CNN was trained do categorize objects on image and LSTM was to generate description of scene.
