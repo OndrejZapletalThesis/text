@@ -1,3 +1,5 @@
+#+OPTIONS: toc:nil author:nil date:nil hypersetup:nil documentclass:nil
+
 * Convolutional Neural Networks
   /CNN/ (/Convolutional Neural Network/) is specialized type of /Artificial Neural Network/ that was originally used in image processing applications. They are arguably most successful models in artificial intelligence inspired in biology. Even though they were guided by many different fields, the core design principles were drawn from neuroscience. Since their success in image processing, they were also very successfully deployed in natural language and video processing applications.
 
