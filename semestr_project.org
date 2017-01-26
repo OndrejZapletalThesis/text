@@ -1,0 +1,240 @@
+* Introduction
+This document is product of preparation for
+CNN (Convolutional Neural Networks) are for the last several years state of the art models for Machine learning applications. CNN are widely used
+
+* History
+History of /Artificial Neural Network/
+  Evolution of /Artificial Neural Network/ concept began with Warren Mcculloch and Walter Pitts in 1943, when they devised mathematical model inspired by the biology of Neuron cell. This inspired the invention of /Perceptron/, created in 1958 by Frank Rosenblatt. /Perceptron/ used very simple model of /Artificial Neuron/ that was modeled based on biological /Neuron/. This model consist of variable number of weighted inputs which summed and squashed through nonlinear function to produce output (typically bounded between values $(0,1)$ or $(-1,1)$).
+
+  From the beginning /Perceptron/ seamed promising, but it was soon discovered that it has severe limitations. These limitations prevent it from being used to classify even slightly more complicated problems. Most prominent voice of criticism was Marvin Minsky, who published book called Perceptrons. The criticism was centered on the fact that there was no efficient way how to effectively train /Perceptron/ to solve complex problems. Among others the book contained mathematical proof that /Perceptron/ is unable to solve simple XOR problem (in other words, it can only solve linearly separable problems). Even though according to Minsky this criticism wasn't malicious, it stifled the interest in Neural Networks for over a decade.
+
+  Interest in NN was rejuvenated in the early 80 by the invention of /Backpropagation/ learning algorithm, which enabled the possibility to use multiple Perceptrons to form networks. Perceptrons could also be stacked upon each other to form layers. Neural networks of this type are commonly called /Multilayer Perceptron/.
+
+  This simple improvement addressed majority of previously raised concerns and enable the application of NN in many different technical domains with moderate success.
+
+  In 80 and 90 the interest in NN plateaued again, and general research of AI was more focused on other (typically of less complex nature) machine learning techniques. In the realm of classification problems it were notably /Support Vector Machines/ (SVM), /Ensemble methods/ and /Decision trees/ (/Random Forest/). AI research community also developed several other paradigms of /Neural Networks/ that were similarly inspired by biology of human brain but took different approach. Notably /Self Organizing Maps/ (SOM) and /Recursive Networks/ (e.g. /Hopfields Networks/).
+
+  By the year 2000 there was very few research groups that were devoting enough attention to the Neural Networks. There was also certain disdain for Neural Networks in academia and AI research community. Success of Neural Networks that was promised almost half a century ago was finally encountered around 2006, when the first Networks with large number of hidden layers was successfully trained. This lead to mainstream adaption of umbrella term /Deep Learning/ (specifically /Deep Neural Network/). The word deep signifies that depth (number of hidden layers) of these networks is large. The key theoretical insight was that to learn complicated functions that can represent high-level abstractions (e.g. vision, language understanding etc.) there is a need for deep architecture (deep in this context can mean number of layers in order of $10^1$ to $10^3$). Even though that progress of Neural Network into direction of structures with high number of hidden layers was obvious, its training was unsolved technical problem. There were basically two reason why this breakthrough didn't come sooner. Firstly there wasn't enough data to effectively train the /Neural Network/. Secondly the computational hardware until then wasn't powerful enough to train sufficiently large and complex networks and also the training methods used in /Multilayer Perceptron/ weren't sufficient for deep networks.
+
+  First problem was solved simply by availability of more data, which were obtained mainly thanks to effort of large companies (Google, Facebook, Youtube, etc.) but also with effort of large community of professionals and hobbyists of data science.
+
+  Both innovation in computational hardware and improvement of training methods were needed to solve the second problem. One of the technical breakthroughs was utilization of /General-Purpose computing on Graphics Processing Units/ (/GPGPU/). Thanks to the fact that training process of Neural Networks is typically large number of simple consequent computations, there is a great potential for parallelization (this is specifically true in case of /Convolutional neural networks/).
+* Image Processing
+  Even thought that neural networks and machine learning exists as field of study since 1950 or sooner, there was no wider adoption of these techniques in image processing. Research in image processing was adopting predominately bottom up methodologies. Methods that were trying algorithmically describe image by detecting points of interest (e.g edges) in images. And then combine points to patches that were usually descibed by several paramters and these would be. In the first attempts to process image with use of machine learning were exactly these descriptors used as input. In other words complexity of image scenary was simplified to greatly reduce number of information supplied for any learning algorithm. Consequence of this approche is that this image preprocessing eables the deployment of often simple Machine learning algorithms for needs of pattern matching or image classification etc. As it might be obvious this favors simpler models.
+
+As it was already expressed Machine learning techniques and models were
+The advent of Machine
+
+Fisrt attmpts to employ machine learning techniques in image processing ware dealing with the problem that input image cannot be used as input into any model directly. In other words image had to be processed and analized to determine higher order fetures in the image before they could be send into the model.
+First problem with this  is that entire depoloyed stack is not wery modulable and to specialized too much (lacks generalization abilities). Second problem is often the fact that because image has to be preprocesd before it is feeded into machine learning model it demands extra time and resources. This can created problems in training face but also during operation after deployment. In practical terms this is often solved by very fast DSP.
+This is problem less and less with techincal inovation but it still is not negligable (at least it has negative affect on the price of the solution).
+
+This is exactly what makes deep learning models so usefull. For example in case of CNNs there is almost no need to process input image before it is used to train the model. Hiearchical extraction of image features that is automatically created by CNN is very advantages in this case.
+* Deep Learning in image processing
+  It was found that *Fully Connected Multilayer Neural Networks* are not ideal for image processing needs.
+The biggest barrier comes from the fact that during training of NN is necessary co compute matrix multiplication for each layer in every iteration cycle.
+This also means that complexity (it needs more space) is increasing rapidly with input resolution (number of input pixels)
+Also
+One of the main problems is that their
+Structure of Fully Connected NN doesn't capture geometric properties input information. In other words because individual layers are fully connected (each output in lower layer is connected to each input in higher layer) networks are not capturing any information about relation of position of individual inputs (image pixels) to each other.
+Third problem is that for higher depth of FCNN increases the likelihood of over-fitting of the network.
+
+of the fundamental two-dimensional property of image data.
+  Due to a high complexity of *Fully Connected Neural Network*, it is very difficult to train *Deep Neural Networks* for even small images. Complexity and computational demand grows exponentially with size of input data. For this reason there was developed new model of neural networks called *Convolutional Neural Networks*.
+** Advantage of CNNs
+# Number of parameters
+# computational demand
+
+Just one simple example that doesn't correctly represent real word situation but it can be used to illustrate the advantage of /CNN/.
+Lets have gray scale input image of size $32x32$ pixels and following layer will have 6 feature maps of size $28x28$.
+/CNN/ have in first convolution layer kernel of size $5x5$. In this case we have totally $(5 * 5 + 1) * 6 = 156$ connection between the two layers.
+If we would like to create equivalent connection between two layers of /FCNN/ (ignoring the fact 6 feature maps wouldn't make sense in /FCNN/), then it would mean $(32 * 32 + 1) * 28 * 28 * 6 = 4821600$ connections. Which means that difference between the two is of $3x10^4$ factor.
+Also it must be take into account that this difference would rise exponentially with larger images with more color channels.
+If input size of the image changes to $64x64$ and add /RGB/ color then /FCNN/ would require $(64 * 64 * 3 + 1) * 28 * 28 * 6 = 57807456$, while /CNN/ only $(5 * 5 * 3 + 1) * 6 = 456$.
+Which is difference of $1x10^6$ factor.
+To hammer the point home it is also advantages to take a look at the possibility of CNN application in moving picture as well. Analogically to previous examples in case of moving image in time the number of parameters raises with number of images in analyzed video.
+
+  # Therefore /Convolutional Neural Networks/ typically aren't fully connected. This has positive effect on computational complexity of network training. Usually complexity of training is rising proportionally (and not exponentially opposed to classical /Fully Connected Neural Networks/) to number of inputs.
+* Convolutional Neural Networks
+  /CNN/ (/Convolutional Neural Network/) is specialized type of /Artificial Neural Network/ that was originally used in image processing applications. They are arguably most successful models in artificial intelligence inspired in biology. Even though they were guided by many different fields, the core design principles were drawn from neuroscience. Since their success in image processing, they were also very successfully deployed in natural language and video processing applications.
+
+  Aforementioned inspiration in biology was based on scientific work of David Hubel and Torsten Wiesel. Hubel and Wisel were neurophysiologist who from late 1950 investigated vision system of mammals for several years. In the experiment, that might be considered little gruesome for today's standards, they connected electrodes into brain of anesthetized cat and measured brain response to visual stimuli [C]. They discovered that reaction of neurons in visual cortex was triggered by very narrow line of light shined under specific angle on projection screen for cat to see. They determined that individual neurons from visual cortex are reacting only to very specific features of input image. Hubel and Wiesel were awarded the Nobel Prize in Physiology and Medicine in 1981 for their discovery and their finding inspired design of CNN.
+
+  There will be several supposition made in order to simplify explanation of the concepts involved:
+- It will be presumed that convolutional layer is working with rectangular input data (e.g images). Even though the Convolutional networks can be also trained to use /1/-dimensional input (e.g sound signal) or /3/-dimensional (e.g MRI images) etc.
+- The complexity of multiple-channel inputs (i.e colored images) will be ignored.
+- Each layer requires rectangular input and produces rectangular output per one /kernel/.
+
+** Structure of /CNN/
+
+    Structure of Convolutional networks is typically composed of three different types of layers. Layer can be of /Convolutional/, /Pooling/ and /Fully-connected/ type. Each type of layer has different rules for forward and error backward signal propagation.
+# Even though there is no strict rule enforcing this, it custom to Network layers can pretty much arbitrarily combine these three types of layers (with exception of Fully-Connected layers, which always have to come last).
+
+*** Convolutional layer
+
+      As the name suggests this layer employs convolution operation. Input into this layer is simply called /input/. Convolution operation is performed on /input/ with specific filter, that is called /kernel/. Output of convolution operation is typically called /feature map/.
+
+ Input into Convolutional layer is either image (in case of first network layer) or /feature map/ from previous layer. /Kernel/ is typically of square shape and its width can range from 3 to N pixels (typically /3/, /5/ or /7/). /Feature map/ is created by convolution of /kernel/ over each specified element of /input/. Convolution is described in more detail in section describing training of CNN.
+
+      Depending on the size of /kernel/ and layer's /padding/ preferences the process of convolution can produce /feature map/ of different size than /input/. When the size of output should be preserved it is necessary to employ /zero padding/ on the edges of /input/. /Zero padding/ in this case has to add necessary amount of zero elements around the edges of input. This amount is determined by $$p = ((h - 1) / 2),$$
+
+ where /h/ is width of used /kernel/. In opposite case the /feature map/ is reduced by the $2*p$. Decreasing of the /feature map/ can be in some cases desirable.
+
+ Reduction of /feature map/ can go even further in case of use of /stride/. Application of /stride/ specifies by how many input points is traversed when moving to neighboring position in each step. When the /stride/ is /1/, /kernel/ is moved by /1/ on each step and the resulting size of /feature map/ is not affected.
+
+      Each Convolutional layer is typically composition of several different /kernels/. In other words output of this layer is tensor containing /feature map/ for each used kernel. Each of these is designed to underline different features of input image. In the first layers these features are typically edges. In following layers the higher the layer the more complex features are captured.
+
+      Each /kernel/ that is used is applied to all inputs of the image to produce one /feature map/ which basically means that neighboring layers are sharing the same weights. This might not be sufficient in some applications and therefore it is possible to use two other types of connections. /Locally connected/ which basically means that applied /kernel/ is of the same size as the /input/ and /tiled convolution/ which means alternation of more than one set of weights on entire /input/.
+
+ /Tiled convolution/ is interesting because with clever combination with /max-pooling/ explained bellow it allows to train specific feature from multiple angles (in other words invariant to rotation).
+
+  Each convolutional layer have non-linearity on its output. Sometimes also called the /detector stage/.
+
+*** Pooling layer
+     This layer typically (more details later) doesn't constitute any learning process but it is used to down-sample size of the /input/. The Principle is that /input/ is divided into multiple non over-leaping rectangular elements and units within each element are used to create single unit of output. This decreases the size of output layer while preserving the most important information contained in input layer. In other words pooling layer compresses information contained within input.
+
+Type of operation that is performed on each element determines a type of pooling layer. This operation can be averaging over units within element, selecting maximal value from element or alternatively learned linear combination of units within element. Learned linear combination introduces form of learning into the pooling layer, but it is not very prevalent.
+
+Selecting of maximal value is most common type of pooling operation and in that case the layer is called /Max-Pooling/ accordingly. Positive effect of Max-pooling down-sampling is that extracted features that are learned in convolution are invariant to small shift of input. /Max-Pooling/ layer will be used to describe process of training of /CNN/.
+
+As already mentioned another advantage of Max-pooling arises when combined with /Tiled convolution/. To create simple detector that is invariant to rotation it possible to use 4 different /kernels/ that are rotated by 90 degrees among each other and when the /tiled convolution/ is used to tile them in groups of 4, the Max-pooling makes sure that resulted /feature map/ contains output from the /kernel/ with strongest signal (i.e the one trained for that specific rotation of the feature).
+
+*** Fully-Connected layer
+
+    Fully-Connected layer is formed from classical neurons that can be found in /FCNN/ and it is always located at the end of the layer stack. In other words it is never followed by another Convolutional layer. Depending on the size of whole CNN it can have /1/ to /3/ /fully connected/ layers (usually not more than that). Input of the first /FC/ layer has inputs from all neurons from previous layer to all neurons of following layer (hence fully connected). All fully connected layers are together acting as /FCNN/.
+
+** Training of CNN
+   Training process of /CNN/ is analogues to /FCNN/ in that both are using /Forward Propagation/ and /Backward Propagation/ phases.
+
+   Situation with /CNN/ is more complicated because network is composed of different types of layers and therefore training must accommodate for variability between different layers and also the individual convolution layers are sharing weights across all neurons in each layer.
+
+First phase is the /Forward Propagation/, where the signal is propagated from inputs of the /CNN/ to its output. In the last layer the output is compared with desired values by /Error function E/ and error is estimated.
+Secondly in /Backward Propagation/ phase the error is propagated backwards through the network and weights for individual layers are updated by its contribution on the error. Most commonly used algorithm for update of weights is /Gradient Descent/. It is not the only one used but in majority of cases the training algorithm is at least based on /Gradient descent/.
+
+*** Forward Propagation
+**** Convolution Layer
+ Each convolutional layer has inputs. In case that the layer is first it is network input (e.g image pixels) in other case it are outputs from neurons from previous layer (typically pooling layer).
+
+ Presuming that input of a layer is of size $N x N$ units and /kernel/ is of size $m x m$. Convolution is computed over $(N-m+1) x (N-m+1)$ units (presuming that there is no zero padding).
+
+ Computation of convolution output $x_{ij}^{(l)}$ is defined as $$ x_{ij}^{(l)}=\sum_{a=0}^{m-1}\sum_{b=0}^{m-1}\omega_{ab}y_{(i+a)(j+b)}^{(l-1)},$$ where $i, j \in (0,N-m+1)$, /l/ is index of current layer, $\omega_{ab}$ are weights of layer (/kernel/) and $y_{(i+a)(j+b)}^{(l-1)}$ is output of previous layer.
+
+ Output of convolutional layer $y_{ij}^{(l)}$ is computed by squashing of output of convolution operation $x_{ij}^{(l)}$ through non-linearity:
+
+ $$ y_{ij}^{(l)}=\sigma(x_{ij}^{(l)}),$$ where $\sigma$ represents this non-linear function.
+
+**** Pooling layer (Max-Pooling)
+     Feed forward operation of pooling layer is generally very simple and it constitutes in selecting of maximal value within subset
+ pooling of multiple inputs into single output.
+ Ratio is typically /4/ to /1/, which means that input matrix is divided into non overlapping sub-matrices of size /2x2/ and each of these produces 1 output. Size of sub-matrices can vary and is dependent on size of input, number of layers.
+
+**** Fully Connected layer
+ Signal is distributed through /FC/ layer in similar fashion as in Convolutional layer. The main difference being that weights of individual neuron connections are not shared among all neurons in one layer.
+ # This might need a special chapter.
+
+*** Backward Propagation
+**** Convolution Layer
+     # To estimate contribution of convolutional layer to the total error of CNN,
+ # there needs to be computed gradient of error function
+
+ $$
+   \frac{\partial E}         {\partial \omega_{ab} }
+   =\sum_{i=0}^{N-m} \sum_{j=0}^{N-m}
+   \frac{\partial E}          {\partial x_{ij}^{(l)}  }
+   \frac{\partial x_{ij}^{(l)}} {\partial \omega_{ab} }
+   =\sum_{i=0}^{N-m} \sum_{j=0}^{N-m}
+   \frac{\partial E}          {\partial x_{ij}^{(l)}  }
+   y_{(i+a)(j+b)}^{(l-1)}
+ $$
+
+ $$
+   \frac{\partial E}           {\partial x_{ij}^{(l)}  }
+   =\frac{\partial E}          {\partial y_{ij}^{(l)}  }
+    \frac{\partial y_{ij}^{(l)}} {\partial x_{ij}^{(l)}  }
+   =\frac{\partial E}          {\partial y_{ij}^{(l)}  }
+    \frac{\partial }           {\partial x_{ij}^{(l)}  }
+   \left( \sigma\left(x_{ij}^{(l)}\right) \right)
+   =\frac{\partial E}          {\partial y_{ij}^{(l)}  }
+   \sigma' \left( x_{ij}^{(l)} \right)
+ $$
+
+ $$
+   \frac{\partial E}         {\partial y_{ij}^{(l-1)} }
+   =\sum_{a=0}^{m-1} \sum_{b=0}^{m-1}
+   \frac{\partial E}          {\partial x_{(i-a)(j-b)}^{(l)} }
+   \frac{\partial x_{(i-a)(j-b)}^{(l)} }          {\partial  y_{ij}^{(l-1)}}
+   =\sum_{a=0}^{m-1} \sum_{b=0}^{m-1}
+   \frac{\partial E}          {\partial x_{(i-a)(j-b)}^{(l)} }
+   \omega_{ab}
+ $$
+
+**** Pooling layer (Max-Pooling)
+     As mentioned in section for /forward Propagation/, there is no explicit learning process happening in pooling layer. Error is propagated backwards depending on how the signal was propagated forward. In case of /Max-pooling/ layer the error is propagated only to the unit with maximal output in /forward propagation/ phase (in other words to the winner of pooling). The error is propagated very sparsely, as result.
+
+     In case of different pooling method it is adjusted accordingly (i.e for /average pooling/ the error is propagated according to contribution of individual neurons).
+
+**** Fully connected layer
+ Training mechanism for /FC/ layer if following the same principles as if in /FCNN/ which is not discussed here in detail. It is similar to one for convolution layers and from our perspective is only important that the first (last in the sense of /Backward Propagation/) /FC/ layer propagates error gradient of each neuron in it, that is next send to all neurons in preceding (following in the sense of /Backward Propagation/) layer.
+ # This might need a special chapter.
+* Application
+
+** Handwritten Digit recognition
+   As it was mentioned before convolutional neural networks were  originally designed for image processing applications. First mention of CNN was in [LeCunn 1989] where they were used for recognition of handwritten digit from dataset of Zip codes from US post. Concept was successfully deployed on DSP chip and tested in real-time application of sorting mail by the zip-code. CNN were in this case one of the first models that was reaching human performance level. Similar techniques were later used to power automatic mail sorting in US Postal Service.
+
+   # from http://machinelearningmastery.com/inspirational-applications-deep-learning/
+
+** [[http://cs231n.stanford.edu/reports2016/219_Report.pdf][Automatic colorization of black and white images]]
+   Automatic colorization is interesting technical problem where the task is to create colored image from gray scale input. Any strides in automatization of this process are welcomed because until recently this was very tedious and slow process that need to heavily assisted by human. This task also seen some success  with regression based models, but resulting images wasn't very aesthetically pleasing.
+
+   Application of very deep convolutional network managed to deliver very promising results.
+In this case convolution network was trained in supervised manner. As input were used gray scaled images that were trained to categorized detected shapes in gray-scale image to correct color. This technology could be also used to colorize black and white video.
+
+** [[https://arxiv.org/pdf/1512.08512.pdf][Automatically adding sounds to silent movies]]
+
+This is very interesting demonstration of capabilities of state of the art Deep Learning models. Solely based on silent video sequence of drumming stick hitting different surfaces with different textures, the model is capable to guess the sound effect that set hitting produces. Convolutional Neural Network was trained to classify the type of surface being hit from visual cues (vibration of hit surface, movement of particles upon impact and so on). And LSTM Recurrent neural network was trained to reproduce sound patterns most similar to actual sound that was recorded in original video. Produced sounds were tested with human participants that had to distinguish synthesized sound from the real ones. Surprisingly in some cases the model fulled to test subjects.
+
+** [[http://www.nlpr.ia.ac.cn/cip/ZongPublications/2015/IEEE-Zhang-8-5.pdf][Automatic machine translation]]
+
+Convolutional Neural Network were used to detected written text within image scenes and send to large LSTM Recurrent neural network to provide translation. Translated text was then re-rendered back to original image converting foreign text into intelligible (translated). This application was deployed by Google in 2015 to their android devices as extension for Translator application. Feature was called instant visual translation.
+
+** [[https://arxiv.org/pdf/1411.4389v4.pdf][Automatic written description of scene in image]]
+
+Already familiar combination of CNN and LSTM RNN used in this case to describe scene depicted on image. CNN was trained do categorize objects on image and LSTM was to generate description of scene.
+* Frameworks
+  # There is wide variety of options for machine learning frameworks in general and also for *CNN* specifically.
+  # Namely there is a variety of tools that are centered around python. All of the frameworks bellow have at least some support for GPGPU computation.
+
+In masters thesis that will be written in next semester is planned to implement Convolutional neural network in one of available frameworks for deep learning.
+This implementation will be compared against results of last year's ILSVCR contest.
+
+Several open source frameworks were tested to determine possible candidates for this implementation.
+Following section lists several frameworks that were analyzed and deemed inadequate for the needs of Master Thesis.
+
+*** MatConvNet
+# add more diss about matlab
+- Matlab toolbox implementing CNNs for computer vision application.
+- Because it is not universal enough and is dependent on the Matlab ecosystem.
+
+*** Caffe
+- Deep learning framework. Also supports python API.
+- It was difficult to find any good documentation and in terms of popularity it was not so prominent as some other frameworks in this list.
+
+*** scikit learn
+- is also python framework that is very popular and offers wide variety of machine learning models but it is not so versatile and it is obvious that is more geared towards hobbyist then to scientific community. The support for Deep Learning is not as wide as it is for example at Keras
+
+*** Torch
+- Scientific computing framework with support of wide variety of machine learning algorithms.
+- Torch was one of the first universal and modular frameworks developed specifically for the needs of Deep learning. It was very prominent few years ago, but it seems that it lost some traction and is not as prevalent as it once was. One of the possible reason for this might be that it is implemented in Lua language that is not nearly so popular as for example python.
+
+** Selected framework Keras
+Keras was determined to be the best fit for the needs of the Masters Thesis.
+
+Kears is implemented in python and therefore integrates well with the massive the Data Science ecosystem that Python is offering. It probably currently has one of the largest communities in deep learning. It has most monthly mentions in Arxiv database, in scientific papers dealing with deep learning.
+
+Keras has very good documentation, many code examples and other resources that help you get started very quickly.
+
+It can run on top of both TensorFlow and Theano. Specifically in the case of TensorFlow this is very good news since it is developed in Google that is dividing enormous amount of resources to make sure that it is one of the (or maybe even the one) fastest deep learning engines out there.
+
+ Keras is supported by CUDA (cuDNN) which is very important specifically for CNN models with usage of GPU hardware.
+* Conclusions
+* Citation
