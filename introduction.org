@@ -1,0 +1,11 @@
+* Introduction
+
+  Deep Learning is a 'buzz word' that can be heard very often at many places these days. Sources of technical news are constantly coming with new and exciting stories of Deep learning application in almost all walks of life. Several of these even broke through into mainstream media. Big corporation such as Amazon, Apple, Facebook or Google are investing enormous resources into their research. Huge number of start-ups also invested heavily into machine learning technologies and is coming up with all sorts of interesting applications.
+
+  Machine learning is very important and is surrounding us every day without us even knowing it. Traffic cameras are using it to detect registration numbers of cars. Mobile devices that all of us poses in our pockets are capable to identify face of person that is operating them. Companies such as Tesla are developing self-driving cars. Machine learning is all around us.
+
+  One of most prominent machine learning success stories of last several years are without a doubt Convolutional Neural Networks.
+
+  Theoretical principle of Convolutional Neural Networks will be described and several import features that secured their success will be identified
+
+  Part of this work will be also devoted to choosing appropriate machine learning framework from many available open-source solutions.

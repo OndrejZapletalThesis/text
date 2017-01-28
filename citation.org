@@ -1,0 +1,20 @@
+* Citation
+- "History of the Perceptron." History of the Perceptron. N.p., n.d. Web. 26 Jan. 2017.
+- "Foundations and Trends in Signal Processing: DEEP LEARNING - Methods and Applications." Microsoft Research. N.p., n.d. Web. 26 Jan. 2017.
+- Gibiansky, Andrew. "Andrew Gibiansky   ::   Math → [Code]." Fully Connected Neural Network Algorithms - Andrew Gibiansky. N.p., n.d. Web. 26 Jan. 2017.
+- "Deep Learning." Deep Learning. N.p., n.d. Web. 26 Jan. 2017.
+- 2010, ISCAS, 2010 IEEE INTERNATIONAL SYMPOSIUM ON CIRCUITS AND SYSTEMS : MAY 30TH - JUNE 2ND, 2010, PARIS a FRANCE. Nano-bio circuit fabrics and systems. Piscataway, NJ: IEEE, 2010. ISBN 9781424453092.
+- HWANG, Jeff a You ZHOU. Image Colorization with Depp Convulational Neural Networks. 2015, 7.
+- ZHANG, Jiajun a Chengqing ZONG. Deep Natural Networks in Machine Translation: An Overview. Natural Language Processing. 2015, , 10. ISSN 1541-1672.
+- OWENS, Andrew, Antonio TORRALBA, Phillip ISOLA, Edward H. ADELSON, Josh MCDERMOTT a William T. FREEMAN. Visually Indicated Sounds. , 11.
+- KRIZHEVSKY, Alex, Ilya SUTSKEVER a Geoffrey E. HINTON. ImageNet Classification with Deep Convolutional Neutral Network. , 9.
+- CUN, Y. Le, L. D. JACKEL, B. BOSER, et al. Handwritten Digit Recognition Appications of Natural Network Chips and Automatic Learning. 1989, , 6. ISSN 0163-6804/89/0011-0041.
+- Arxiv database. Arxiv [online]. [cit. 2017-01-27]. Available at: https://arxiv.org/
+- TenserFlow: Deep learning engine. TensorFlow [online]. [cit. 2017-01-27]. Available at: https://www.tensorflow.org/
+- Theano: Deep learning engine. Theano [online]. [cit. 2017-01-27]. Available at: http://deeplearning.net/software/theano/
+- NVIDIA cuDNN: GPU Accelerated Deep Learning. Developer.nvidia.com/cudnn [online]. [cit. 2017-01-27]. Available at: https://developer.nvidia.com/cudnn
+- ILSVRC: Large Scale Visual Recognition Challenge. ILSVRC [online]. [cit. 2017-01-27]. Available at: http://www.image-net.org/challenges/LSVRC/
+- MARVIN MINSKY AND SEYMOUR PAPERT. Perceptrons: an introduction to computational geometry. 2. print. with corr. Cambridge, Mass: MIT Press, 1969. ISBN 0262630222.
+- Hubel DH, Wiesel TN. Receptive fields of single neurones in the cat’s striate cortex. The Journal of Physiology. 1959;148(3):574-591.
+- A standard convolutional neural network, By Aphex34 (Own work) [CC BY-SA 4.0 (http://creativecommons.org/licenses/by-sa/4.0)], via Wikimedia Commons
+- American Journal of Mechanical Engineering. 2016, 4(1), 21-31 doi:10.12691/ajme-4-1-4

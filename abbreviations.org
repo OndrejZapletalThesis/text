@@ -2,3 +2,7 @@
 NN - Neural Netowrk(s)
 FCNN - Fully Connected Neural Network
 CNN - Convolutional Neural Network
+AI - Artificial Intelligence
+SVM - Support Vector Machines
+SOM - Self Organizing Maps/
+GPGPU - General-Purpose computing on Graphics Processing Units

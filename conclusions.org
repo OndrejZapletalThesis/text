@@ -1,0 +1,11 @@
+* Conclusions
+
+  In this thesis was described brief history of Neural Network model, and its evolution into Deep learning models such as Convolutional Neural Network. Some problems of image processing discipline were highlighted and role of Deep Learning in image processing.
+
+  It was describe what makes Convolutional Neural Network especially aptly for the needs of image processing. Several examples of state of the art Convolutional Neural Network application were described.
+
+  In the last section were described several possible frameworks for implementation of Deep learning and Convolutional Neural Network.
+
+  In the Master's Thesis that will be written in next semester is planned to implement Convolutional Neural Network in one of the discussed Deep Learning frameworks, and consequently compare this implementation with results of last year's ILSVRC contest [citation].
+
+  Keras was determined to be the best fit for the needs of this implementation and also keeping barriers to entry in lowest possible level.
