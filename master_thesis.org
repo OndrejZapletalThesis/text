@@ -1,5 +1,10 @@
 #+LaTeX_CLASS: org-report
-#+OPTIONS: toc:nil author:nil date:nil title:nil
+#+OPTIONS: toc:nil
+#+OPTIONS: author:nil
+#+OPTIONS: date:nil
+#+OPTIONS: title:nil
+# Set number of heading levels to 5
+#+OPTIONS: H:6
 #+LATEX_HEADER: \usepackage{ucs}
 #+LATEX_HEADER:	\usepackage[utf8x]{inputenc}
 
