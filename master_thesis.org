@@ -1,0 +1,51 @@
+#+LaTeX_CLASS: org-report
+#+OPTIONS: toc:nil author:nil date:nil title:nil
+#+LATEX_HEADER: \usepackage{ucs}
+#+LATEX_HEADER:	\usepackage[utf8x]{inputenc}
+
+#+LATEX_HEADER:	\PrerenderUnicode{ěščřžýáíéĚŠČŘŽÝÁÍÉďťňĎŤŇůúÚóÓ} %predkresleni diakritiky, mozno pridat/ubrat znaky podle potreby
+
+#+LATEX_HEADER: \usepackage[czech]{babel}% čeština
+#+LATEX_HEADER: \usepackage[IL2]{fontenc}
+
+#+LATEX_HEADER: \usepackage[]{diplomka}
+#+LATEX_HEADER: \usepackage[]{VSKP} % Sablona dle smernice rektora
+#+LATEX_HEADER: \input{vskp} % Uvodni desky atd dle smernice rektora
+
+#+LATEX_HEADER: \splithyphens% při rozdělování slov se spojovníkem opakuj spojovník
+#+LATEX_HEADER: \ifx\pdfcompresslevel\undefined
+#+LATEX_HEADER:    \usepackage{graphicx}
+#+LATEX_HEADER:    \DeclareGraphicsExtensions{.bmp,.eps,.png}
+#+LATEX_HEADER: \else
+#+LATEX_HEADER:    \usepackage[pdftitle={\typpracetxt},
+#+LATEX_HEADER:             pdfauthor={\autortxt},
+#+LATEX_HEADER:             pdftex=true,
+#+LATEX_HEADER:             %bookmarks=true,
+#+LATEX_HEADER:             linkcolor=blue,
+#+LATEX_HEADER:             colorlinks=true,
+#+LATEX_HEADER:             breaklinks=true,
+#+LATEX_HEADER:             a4paper]{hyperref}
+#+LATEX_HEADER:    \usepackage[pdftex]{graphicx}
+#+LATEX_HEADER:    \DeclareGraphicsExtensions{.png,.pdf}
+#+LATEX_HEADER: \fi
+
+#+BEGIN_EXPORT latex
+\titul
+\abstrakty
+\obsah
+#+END_EXPORT
+
+
+#+INCLUDE: introduction.org
+#+INCLUDE: history.org
+#+INCLUDE: image_processing.org
+#+INCLUDE: convolution_networks.org
+#+INCLUDE: application.org
+#+INCLUDE: frameworks.org
+#+INCLUDE: conclusions.org
+
+# #+BEGIN_EXPORT latex
+# \input{Literatura}% nutné
+# \input{SeznamZkratek}% nutné
+# \input{SeznamPriloh}% není povinné
+# #+END_EXPORT
