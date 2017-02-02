@@ -1,22 +1,19 @@
+# set class of latex document (in this case is is report)
 #+LaTeX_CLASS: org-report
+# disable automatic table of content extraction
 #+OPTIONS: toc:nil
-#+OPTIONS: author:nil
-#+OPTIONS: date:nil
-#+OPTIONS: title:nil
-# Set number of heading levels to 5
-#+OPTIONS: H:6
+# self explanatory options for latex export
+#+OPTIONS: author:nil date:nil  title:nil
+
+# This is only testing header from VUT template. It will be modified in the future
 #+LATEX_HEADER: \usepackage{ucs}
 #+LATEX_HEADER:	\usepackage[utf8x]{inputenc}
-
 #+LATEX_HEADER:	\PrerenderUnicode{ěščřžýáíéĚŠČŘŽÝÁÍÉďťňĎŤŇůúÚóÓ} %predkresleni diakritiky, mozno pridat/ubrat znaky podle potreby
-
 #+LATEX_HEADER: \usepackage[czech]{babel}% čeština
 #+LATEX_HEADER: \usepackage[IL2]{fontenc}
-
 #+LATEX_HEADER: \usepackage[]{diplomka}
 #+LATEX_HEADER: \usepackage[]{VSKP} % Sablona dle smernice rektora
 #+LATEX_HEADER: \input{vskp} % Uvodni desky atd dle smernice rektora
-
 #+LATEX_HEADER: \splithyphens% při rozdělování slov se spojovníkem opakuj spojovník
 #+LATEX_HEADER: \ifx\pdfcompresslevel\undefined
 #+LATEX_HEADER:    \usepackage{graphicx}
@@ -34,6 +31,7 @@
 #+LATEX_HEADER:    \DeclareGraphicsExtensions{.png,.pdf}
 #+LATEX_HEADER: \fi
 
+# This is also from VUT template but this is exported within document body
 #+BEGIN_EXPORT latex
 \titul
 \abstrakty
@@ -41,6 +39,7 @@
 #+END_EXPORT
 
 
+# Import of individual chapters of the thesis
 #+INCLUDE: introduction.org
 #+INCLUDE: history.org
 #+INCLUDE: image_processing.org
@@ -49,8 +48,11 @@
 #+INCLUDE: frameworks.org
 #+INCLUDE: conclusions.org
 
+# This will be agian exported within document body but these documents dont exist yet therefore they are commented out
 # #+BEGIN_EXPORT latex
 # \input{Literatura}% nutné
 # \input{SeznamZkratek}% nutné
 # \input{SeznamPriloh}% není povinné
 # #+END_EXPORT
+
+# TODO figure out how to use bibtex
