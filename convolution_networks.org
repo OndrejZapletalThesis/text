@@ -34,6 +34,7 @@
     Each convolutional layer has non-linearity on its output that is sometimes also called the /detector stage/.
 
 *** Pooling layer
+
     This layer typically (more details later) doesn't constitute any learning process but it is used to down-sample size of the input. The Principle is that input is divided into multiple not-overlapping rectangular elements and units within each element are used to create single unit of output. This decreases the size of output layer while preserving the most important information contained in input layer. In other words pooling layer compresses information contained within input.
 
     Type of operation that is performed on each element determines a type of pooling layer. This operation can be averaging over units within element, selecting maximal value from element or alternatively learned linear combination of units within element. Learned linear combination introduces form of learning into the pooling layer, but it is not very prevalent.
@@ -68,11 +69,13 @@ Each convolutional layer has inputs. In case that the layer is first, it is netw
      $$ y_{ij}^{(l)}=\sigma(x_{ij}^{(l)}),$$ where $\sigma$ represents this non-linear function.
 
 **** Pooling layer (Max-Pooling)
+
      Feed forward operation of pooling layer is generally very simple and it constitutes in selecting of maximal value within subset
      pooling of multiple inputs into single output.
      Ratio is typically 4 to 1, which means that input matrix is divided into not-overlapping sub-matrices of size 2x2 and each of these produces 1 output. Size of sub-matrices can vary and is dependent on size of input, number of layers.
 
 **** Fully Connected layer
+
      Signal is distributed through FC layer in similar fashion as in Convolutional layer. The main difference is that weights of individual neuron connections are not shared among all neurons in one layer.
 
 *** Backward Propagation
