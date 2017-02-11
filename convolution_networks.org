@@ -58,7 +58,7 @@
 *** Forward Propagation
 **** Convolution Layer
      # fix this sentence
-Each convolutional layer has inputs. In case that the layer is first, it is network input (i.e individual pixels of image) in other cases, the inputs are outputs from neurons from previous layer (this is typically pooling layer).
+     Each convolutional layer has inputs. In case that the layer is first, it is network input (i.e individual pixels of image) in other cases, the inputs are outputs from neurons from previous layer (this is typically pooling layer).
 
      Presuming that input of a layer is of size $N x N$ units and kernel is of size $m x m$. Convolution is computed over $(N-m+1) x (N-m+1)$ units (presuming that there is no zero padding).
 
@@ -113,8 +113,7 @@ Each convolutional layer has inputs. In case that the layer is first, it is netw
    # Number of parameters
    # computational demand
    To further highlight the difference between Fully Connected Neural Network and Convolution Neural Network it is worth to compare the case of 2 neighboring layers.
-   Lets have gray scale input image of size 32x32 pixels and following layer will be convolutional with 6
-feature maps of size 28x28. Kernels used in this convolutional layer will have the size of 5x5. In this case we have totally (5 * 5 + 1) * 6 = 156 parameters between the two layers.
-   If we would like to create equivalent connection between two layers of FCNN, then it would have mean (32 * 32 + 1) * 28 * 28 = 803600 connections (parameters). Which means that difference between the two is of ~5000 ratio.
-   This difference would rise exponentially with larger images or with more color channels. When input size of the image changes to 64x64 and it has RGB color then FCNN would requires (64 * 64 * 3 + 1) * 28 * 28 = 9634576 connections (parameters). In the same case the CNN only needs (5 * 5 * 3 + 1) * 6 = 456 parameters. Which is difference of ~20000 factor.
+   Lets have gray scale input image of size 32x32 pixels and following layer will be convolutional with 6 feature maps of size 28x28. Kernels used in this convolutional layer will have the size of 5x5. In this case we have totally $(5 * 5 + 1) * 6 = 156$ parameters between the two layers.
+   If we would like to create equivalent connection between two layers of FCNN, then it would have mean $(32 * 32 + 1) * 28 * 28 = 803600$ connections (parameters). Which means that difference between the two is of ~5000 ratio.
+   This difference would rise exponentially with larger images or with more color channels. When input size of the image changes to 64x64 and it has RGB color then FCNN would requires $(64 * 64 * 3 + 1) * 28 * 28 = 9634576$ connections (parameters). In the same case the CNN only needs $(5 * 5 * 3 + 1) * 6 = 456$ parameters. Which is difference of ~20000 factor.
    Just to elaborate, in case that CNN would be used to process video. Analogically to previous examples in case of moving image in time the number of parameters raises linearly with number of images in analyzed video.
