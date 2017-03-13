@@ -1,3 +1,8 @@
+#+begin_src sh :exports none
+  BIBINPUTS=~/projects/thesis/text/:$BIBINPUTS
+  export BIBINPUTS
+#+end_src
+
 # set class of latex document (in this case is is report)
 #+LaTeX_CLASS: org-report
 # disable automatic table of content extraction
@@ -8,13 +13,13 @@
 # This is only testing header from VUT template. It will be modified in the future
 #+LATEX_HEADER: \usepackage{ucs}
 #+LATEX_HEADER:	\usepackage[utf8x]{inputenc}
-#+LATEX_HEADER:	\PrerenderUnicode{ěščřžýáíéĚŠČŘŽÝÁÍÉďťňĎŤŇůúÚóÓ} %predkresleni diakritiky, mozno pridat/ubrat znaky podle potreby
-#+LATEX_HEADER: \usepackage[czech]{babel}% čeština
+#+LATEX_HEADER:	\PrerenderUnicode{ěščřžýáíéĚŠČŘŽÝÁÍÉďťňĎŤŇůúÚóÓ}
+#+LATEX_HEADER: \usepackage[czech]{babel}
 #+LATEX_HEADER: \usepackage[IL2]{fontenc}
 #+LATEX_HEADER: \usepackage[]{diplomka}
-#+LATEX_HEADER: \usepackage[]{VSKP} % Sablona dle smernice rektora
-#+LATEX_HEADER: \input{vskp} % Uvodni desky atd dle smernice rektora
-#+LATEX_HEADER: \splithyphens% při rozdělování slov se spojovníkem opakuj spojovník
+#+LATEX_HEADER: \usepackage[]{VSKP}
+#+LATEX_HEADER: \input{vskp}
+#+LATEX_HEADER: \splithyphens
 #+LATEX_HEADER: \ifx\pdfcompresslevel\undefined
 #+LATEX_HEADER:    \usepackage{graphicx}
 #+LATEX_HEADER:    \DeclareGraphicsExtensions{.bmp,.eps,.png}
