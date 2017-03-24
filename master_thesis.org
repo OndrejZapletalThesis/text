@@ -3,6 +3,8 @@
   export BIBINPUTS
 #+end_src
 
+#+RESULTS:
+
 # set class of latex document (in this case is is report)
 #+LaTeX_CLASS: org-report
 # disable automatic table of content extraction
@@ -45,12 +47,19 @@
 
 
 # Import of individual chapters of the thesis
+# 1 Introduction
 #+INCLUDE: introduction.org
+# 2 History
 #+INCLUDE: history.org
+# 3 Image Processing
 #+INCLUDE: image_processing.org
+# 4 Convolution Networks
 #+INCLUDE: convolution_networks.org
+# 5 Application
 #+INCLUDE: application.org
+# 6 Frameworks
 #+INCLUDE: frameworks.org
+# 7 Conclusions
 #+INCLUDE: conclusions.org
 
 # This will be agian exported within document body but these documents dont exist yet therefore they are commented out
