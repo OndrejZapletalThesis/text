@@ -1,9 +1,7 @@
-#+begin_src sh :exports none
-  BIBINPUTS=~/projects/thesis/text/:$BIBINPUTS
-  export BIBINPUTS
-#+end_src
-
-#+RESULTS:
+# #+begin_src sh :exports none
+#   BIBINPUTS=~/projects/thesis/text/:$BIBINPUTS
+#   export BIBINPUTS
+# #+end_src
 
 # set class of latex document (in this case is is report)
 #+LaTeX_CLASS: org-report
@@ -39,12 +37,9 @@
 #+LATEX_HEADER: \fi
 
 # This is also from VUT template but this is exported within document body
-#+BEGIN_EXPORT latex
 \titul
 \abstrakty
 \obsah
-#+END_EXPORT
-
 
 # Import of individual chapters of the thesis
 # 1 Introduction
@@ -63,10 +58,8 @@
 #+INCLUDE: conclusions.org
 
 # This will be agian exported within document body but these documents dont exist yet therefore they are commented out
-# #+BEGIN_EXPORT latex
-# \input{Literatura}% nutné
+#+INCLUDE: citation.org
 # \input{SeznamZkratek}% nutné
 # \input{SeznamPriloh}% není povinné
-# #+END_EXPORT
 
 # TODO figure out how to use bibtex
