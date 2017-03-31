@@ -1,8 +1,10 @@
-* Abbreviations
-NN - Neural Netowrk(s)
-FCNN - Fully Connected Neural Network
-CNN - Convolutional Neural Network
-AI - Artificial Intelligence
-SVM - Support Vector Machines
-SOM - Self Organizing Maps/
-GPGPU - General-Purpose computing on Graphics Processing Units
+\newacronym{utc}{UTC}{Coordinated Universal Time}
+\newacronym{adt}{ADT}{Atlantic Daylight Time}
+\newacronym{est}{EST}{Eastern Standard Time}
+\newacronym{nn}{NN}{Neural Netowrk(s)}
+\newacronym{fcnn}{FCNN}{Fully Connected Neural Network}
+\newacronym{cnn}{CNN}{Convolutional Neural Network}
+\newacronym{ai}{AI}{Artificial Intelligence}
+\newacronym{svm}{SVM}{Support Vector Machines}
+\newacronym{som}{SOM}{Self Organizing Maps/}
+\newacronym{gpgpu}{GPGPU}{General-Purpose computing on Graphics Processing Units}

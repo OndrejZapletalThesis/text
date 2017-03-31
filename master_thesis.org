@@ -36,10 +36,19 @@
 #+LATEX_HEADER:    \DeclareGraphicsExtensions{.png,.pdf}
 #+LATEX_HEADER: \fi
 
+#+LATEX_HEADER: \usepackage{cite}
+#+LATEX_HEADER: \usepackage[nottoc,notlof,notlot]{tocbibind}
+#+LATEX_HEADER: \AtBeginDocument{\renewcommand{\bibname}{References}}
+#+LATEX_HEADER: \usepackage[acronym,nomain,toc]{glossaries}
+#+LATEX_HEADER: \makeglossaries
+
 # This is also from VUT template but this is exported within document body
 \titul
 \abstrakty
 \obsah
+
+# Contains list of abrivations
+#+INCLUDE: abbreviations.org
 
 # Import of individual chapters of the thesis
 # 1 Introduction
@@ -57,9 +66,12 @@
 # 7 Conclusions
 #+INCLUDE: conclusions.org
 
-# This will be agian exported within document body but these documents dont exist yet therefore they are commented out
-#+INCLUDE: citation.org
-# \input{SeznamZkratek}% nutné
-# \input{SeznamPriloh}% není povinné
+\cite{ Goodfellow-et-al-2016 }
+\gls{utc} is 3 hours behind \gls{adt} and 10 hours ahead of \gls{est}.
 
-# TODO figure out how to use bibtex
+# This will be agian exported within document body but these documents dont exist yet therefore they are commented out
+\bibliographystyle{plain}
+\bibliography{citation}
+# Prints list of acronyms
+\printglossaries
+# \input{SeznamPriloh}% není povinné
