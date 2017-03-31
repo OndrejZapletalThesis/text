@@ -1,5 +1,4 @@
-# 2 History
-#+INCLUDE: history.org
+* Theory
 # 3 Image Processing
 #+INCLUDE: image_processing.org
 # 4 Convolution Networks

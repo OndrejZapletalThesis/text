@@ -1,31 +1,31 @@
-* Image Processing
-There was no wider adoption of that machine learning  techniques in image processing for very long time, Even though they existed as field of study since 1950's. Reason being that machine learning algorithms were very simple and therefore unfit for generally very complex problems of image processing (e.g. object detection and classification).
+** Image Processing
+ There was no wider adoption of that machine learning  techniques in image processing for very long time, Even though they existed as field of study since 1950's. Reason being that machine learning algorithms were very simple and therefore unfit for generally very complex problems of image processing (e.g. object detection and classification).
 
-Research in image processing was adopting predominately bottom up (feature-based) methodologies. Typical classification pipeline in computer vision would be following:
-- Image capture - Image is captured (by camera or similar device) and digitized.
-- Preprocessing - Digitized image is modified to emphasize important features (e.g. noise reduction, contrast normalization etc.).
-- Segmentation - Selection of interesting features (edges, similar surfaces).
-- Description - Extraction of radiometric, photometric descriptors and so on.
-- Classification - Some means to classify the object.
+ Research in image processing was adopting predominately bottom up (feature-based) methodologies. Typical classification pipeline in computer vision would be following:
+ - Image capture - Image is captured (by camera or similar device) and digitized.
+ - Preprocessing - Digitized image is modified to emphasize important features (e.g. noise reduction, contrast normalization etc.).
+ - Segmentation - Selection of interesting features (edges, similar surfaces).
+ - Description - Extraction of radiometric, photometric descriptors and so on.
+ - Classification - Some means to classify the object.
 
-In the first attempts to apply machine learning in image processing, it was used usually deployed as the classification model. In other words complex problems were reduced and simplified in order to utilize machine learning techniques. Consequently this approach favors simpler models.
+ In the first attempts to apply machine learning in image processing, it was used usually deployed as the classification model. In other words complex problems were reduced and simplified in order to utilize machine learning techniques. Consequently this approach favors simpler models.
 
-This also brings the problem that any of these applications is not very versatile. Each application is usually only capable of solving very simple problem and any deviation from ideal circumstances can mean failure. Application can have problem with varying contrast, illumination, scaling, rotation etc.
+ This also brings the problem that any of these applications is not very versatile. Each application is usually only capable of solving very simple problem and any deviation from ideal circumstances can mean failure. Application can have problem with varying contrast, illumination, scaling, rotation etc.
 
-Second problem is often the fact that because image has to be preprocessed several times before it is fed into machine learning model it demands extra time and resources. This can created problems in training phase but also during operation after deployment.
-This is less of a problem with technical innovation and today it can be solved by very fast DSP, but it still is not negligible effect and it can have negative affect on the price of the solution. This is where Deep learning models starts to exhibit significant advantage.
+ Second problem is often the fact that because image has to be preprocessed several times before it is fed into machine learning model it demands extra time and resources. This can created problems in training phase but also during operation after deployment.
+ This is less of a problem with technical innovation and today it can be solved by very fast DSP, but it still is not negligible effect and it can have negative affect on the price of the solution. This is where Deep learning models starts to exhibit significant advantage.
 
-Deep Learning models are in theory capable of capturing complex (higher order) features of the input due to the fact they can learn very high level of abstraction from even very low level features. And what is even more important, is the fact that Deep learning model in theory doesn't need any kind (or very little) of preprocessing. Input image can be directly connected as input into Deep Network.
+ Deep Learning models are in theory capable of capturing complex (higher order) features of the input due to the fact they can learn very high level of abstraction from even very low level features. And what is even more important, is the fact that Deep learning model in theory doesn't need any kind (or very little) of preprocessing. Input image can be directly connected as input into Deep Network.
 
-** Deep Learning in image processing
-   It was found that general *Fully Connected Neural Network* is not ideal for image processing needs. Even small images typically represents enormous amount of inputs (i.e. image of the size 64x64 pixels represents 4096 inputs).
-   Since each of these inputs has to be connected to all neurons in following layer and weight of each connection has to be memorized, this represents enormous amount of parameters. Moreover because during the learning process update of these weights is computed via matrix multiplication for larger images this can be irresolvable problem, which exacerbate with the number of hidden layers.
+*** Deep Learning in image processing
+    It was found that general *Fully Connected Neural Network* is not ideal for image processing needs. Even small images typically represents enormous amount of inputs (i.e. image of the size 64x64 pixels represents 4096 inputs).
+    Since each of these inputs has to be connected to all neurons in following layer and weight of each connection has to be memorized, this represents enormous amount of parameters. Moreover because during the learning process update of these weights is computed via matrix multiplication for larger images this can be irresolvable problem, which exacerbate with the number of hidden layers.
 
-   The structure of FCNN has another deficiency for image processing application, which is that it doesn't capture geometric properties of information from input image. In other words because individual layers are fully connected (each output in lower layer is connected to each input in higher layer) networks are not capturing any information about relation of position of individual inputs (image pixels) to each other.
+    The structure of FCNN has another deficiency for image processing application, which is that it doesn't capture geometric properties of information from input image. In other words because individual layers are fully connected (each output in lower layer is connected to each input in higher layer) networks are not capturing any information about relation of position of individual inputs (image pixels) to each other.
 
-   Third problem is that for higher depth of FCNN increases the likelihood of getting stuck in some local minima.
+    Third problem is that for higher depth of FCNN increases the likelihood of getting stuck in some local minima.
 
-   All of these problems were solved by the model of neural networks called Convolutional Neural Networks [citation]
+    All of these problems were solved by the model of neural networks called Convolutional Neural Networks [citation]
 
-# For example in case of CNNs there is almost no need to process input image before it is used to train the model. Hiearchical extraction of image features that is automatically created by CNN is very advantages in this case.
-# of the fundamental two-dimensional property of image data.
+ # For example in case of CNNs there is almost no need to process input image before it is used to train the model. Hiearchical extraction of image features that is automatically created by CNN is very advantages in this case.
+ # of the fundamental two-dimensional property of image data.
