@@ -82,6 +82,7 @@
 **** Convolution Layer
      # To estimate contribution of convolutional layer to the total error of CNN,
      # there needs to be computed gradient of error function
+     Following equasions were lifted from \cite{Goodfellow-et-al-2016}.
 
      $$
      \frac{\partial E} {\partial \omega_{ab}}
