@@ -1,77 +1,21 @@
-# #+begin_src sh :exports none
-#   BIBINPUTS=~/projects/thesis/text/:$BIBINPUTS
-#   export BIBINPUTS
-# #+end_src
-
-# set class of latex document (in this case is is report)
-#+LaTeX_CLASS: org-report
-# disable automatic table of content extraction
-#+OPTIONS: toc:nil
-# self explanatory options for latex export
-#+OPTIONS: author:nil date:nil  title:nil
-
-# This is only testing header from VUT template. It will be modified in the future
-#+LATEX_HEADER: \usepackage{ucs}
-#+LATEX_HEADER:	\usepackage[utf8x]{inputenc}
-#+LATEX_HEADER:	\PrerenderUnicode{ěščřžýáíéĚŠČŘŽÝÁÍÉďťňĎŤŇůúÚóÓ}
-#+LATEX_HEADER: \usepackage[czech]{babel}
-#+LATEX_HEADER: \usepackage[IL2]{fontenc}
-#+LATEX_HEADER: \usepackage[]{diplomka}
-#+LATEX_HEADER: \usepackage[]{VSKP}
-#+LATEX_HEADER: \input{vskp}
-#+LATEX_HEADER: \splithyphens
-#+LATEX_HEADER: \ifx\pdfcompresslevel\undefined
-#+LATEX_HEADER:    \usepackage{graphicx}
-#+LATEX_HEADER:    \DeclareGraphicsExtensions{.bmp,.eps,.png}
-#+LATEX_HEADER: \else
-#+LATEX_HEADER:    \usepackage[pdftitle={\typpracetxt},
-#+LATEX_HEADER:             pdfauthor={\autortxt},
-#+LATEX_HEADER:             pdftex=true,
-#+LATEX_HEADER:             %bookmarks=true,
-#+LATEX_HEADER:             linkcolor=blue,
-#+LATEX_HEADER:             colorlinks=true,
-#+LATEX_HEADER:             breaklinks=true,
-#+LATEX_HEADER:             a4paper]{hyperref}
-#+LATEX_HEADER:    \usepackage[pdftex]{graphicx}
-#+LATEX_HEADER:    \DeclareGraphicsExtensions{.png,.pdf}
-#+LATEX_HEADER: \fi
-
-#+LATEX_HEADER: \usepackage{cite}
-#+LATEX_HEADER: \usepackage[nottoc,notlof,notlot]{tocbibind}
-#+LATEX_HEADER: \AtBeginDocument{\renewcommand{\bibname}{References}}
-#+LATEX_HEADER: \usepackage[acronym,nomain,toc]{glossaries}
-#+LATEX_HEADER: \makeglossaries
-
-# This is also from VUT template but this is exported within document body
-\titul
-\abstrakty
-\obsah
+#+TITLE: Master Thesis
+# Definitions of headers
+#+INCLUDE: header.org
 
 # Contains list of abrivations
 #+INCLUDE: abbreviations.org
 
-# Import of individual chapters of the thesis
-# 1 Introduction
+# Chapter I Introduction
 #+INCLUDE: introduction.org
-# 2 History
-#+INCLUDE: history.org
-# 3 Image Processing
-#+INCLUDE: image_processing.org
-# 4 Convolution Networks
-#+INCLUDE: convolution_networks.org
-# 5 Application
-#+INCLUDE: application.org
-# 6 Frameworks
-#+INCLUDE: frameworks.org
+
+# Chapter II for theory portion
+#+INCLUDE: theory.org
+
+# Chapter III for experiment portion
+#+INCLUDE: experiment.org
+
 # 7 Conclusions
 #+INCLUDE: conclusions.org
 
-\cite{ Goodfellow-et-al-2016 }
-\gls{utc} is 3 hours behind \gls{adt} and 10 hours ahead of \gls{est}.
-
-# This will be agian exported within document body but these documents dont exist yet therefore they are commented out
-\bibliographystyle{plain}
-\bibliography{citation}
-# Prints list of acronyms
-\printglossaries
-# \input{SeznamPriloh}% není povinné
+# Footer
+#+INCLUDE: footer.org

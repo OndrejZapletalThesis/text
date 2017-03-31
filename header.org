@@ -1,0 +1,46 @@
+# set class of latex document (in this case is is report)
+#+LaTeX_CLASS: org-report
+# disable automatic table of content extraction
+#+OPTIONS: toc:nil
+# self explanatory options for latex export
+#+OPTIONS: author:nil date:nil  title:nil
+
+# This is only testing header from VUT template. It will be modified in the future
+#+LATEX_HEADER: \usepackage{ucs}
+#+LATEX_HEADER:	\usepackage[utf8x]{inputenc}
+#+LATEX_HEADER:	\PrerenderUnicode{ěščřžýáíéĚŠČŘŽÝÁÍÉďťňĎŤŇůúÚóÓ}
+#+LATEX_HEADER: \usepackage[czech]{babel}
+#+LATEX_HEADER: \usepackage[IL2]{fontenc}
+#+LATEX_HEADER: \usepackage[]{diplomka}
+#+LATEX_HEADER: \usepackage[]{VSKP}
+#+LATEX_HEADER: \input{vskp}
+#+LATEX_HEADER: \splithyphens
+#+LATEX_HEADER: \ifx\pdfcompresslevel\undefined
+#+LATEX_HEADER:    \usepackage{graphicx}
+#+LATEX_HEADER:    \DeclareGraphicsExtensions{.bmp,.eps,.png}
+#+LATEX_HEADER: \else
+#+LATEX_HEADER:    \usepackage[pdftitle={\typpracetxt},
+#+LATEX_HEADER:             pdfauthor={\autortxt},
+#+LATEX_HEADER:             pdftex=true,
+#+LATEX_HEADER:             %bookmarks=true,
+#+LATEX_HEADER:             linkcolor=blue,
+#+LATEX_HEADER:             colorlinks=true,
+#+LATEX_HEADER:             breaklinks=true,
+#+LATEX_HEADER:             a4paper]{hyperref}
+#+LATEX_HEADER:    \usepackage[pdftex]{graphicx}
+#+LATEX_HEADER:    \DeclareGraphicsExtensions{.png,.pdf}
+#+LATEX_HEADER: \fi
+
+# Package used for citations
+#+LATEX_HEADER: \usepackage{cite}
+# Settings for references
+#+LATEX_HEADER: \usepackage[nottoc,notlof,notlot]{tocbibind}
+#+LATEX_HEADER: \AtBeginDocument{\renewcommand{\bibname}{References}}
+# Settings for glossaries
+#+LATEX_HEADER: \usepackage[acronym,nomain,toc]{glossaries}
+#+LATEX_HEADER: \makeglossaries
+
+# This is also from VUT template but this is exported within document body
+\titul
+\abstrakty
+\obsah

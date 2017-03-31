@@ -1,0 +1,6 @@
+# This will be agian exported within document body but these documents dont exist yet therefore they are commented out
+\bibliographystyle{plain}
+\bibliography{citation}
+# Prints list of acronyms
+\printglossaries
+# \input{SeznamPriloh}% není povinné

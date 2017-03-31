@@ -11,14 +11,14 @@
   - It can run on top of both TensorFlow and Theano engines. Specifically in the case of TensorFlow this is very good news since it is developed by Google, which is dividing enormous amount of resources to make sure that it is one of the (or maybe even the one) fastest deep learning engines out there.
   - Keras is supported by CUDA (cuDNN) which is very important specifically for CNN models with usage of GPU hardware.
 ** MatConvNet
-   - Matlab toolbox implementing CNNs for computer vision application.
-   - It has the disadvantage of being part of proprietary software
-   - Its community is not nearly as big as in case of Torch or Keras
+  - Matlab toolbox implementing CNNs for computer vision application.
+  - It has the disadvantage of being part of proprietary software
+  - Its community is not nearly as big as in case of Torch or Keras
 
 ** Scikit learn
-    - is also python framework that is very popular and offers wide variety of machine learning models but it is not so versatile and it is obvious that is more geared towards hobbyist then for scientific community.
-- The support for Deep Learning is not as wide as it is for example at Keras
+  - is also python framework that is very popular and offers wide variety of machine learning models but it is not so versatile and it is obvious that is more geared towards hobbyist then for scientific community.
+  - The support for Deep Learning is not as wide as it is for example at Keras
 
 ** Torch
-   - Scientific computing framework with support of wide variety of machine learning algorithms.
-   - Torch was one of the first universal and modular frameworks developed specifically for the needs of Deep learning. It was very prominent few years ago, but it seems that it lost some traction and is not as prevalent as it once was. One of the possible reasons for this might be that it is implemented in Lua programming language that is not nearly so popular as for example python.
+  - Scientific computing framework with support of wide variety of machine learning algorithms.
+  - Torch was one of the first universal and modular frameworks developed specifically for the needs of Deep learning. It was very prominent few years ago, but it seems that it lost some traction and is not as prevalent as it once was. One of the possible reasons for this might be that it is implemented in Lua programming language that is not nearly so popular as for example python.
