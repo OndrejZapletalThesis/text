@@ -44,3 +44,6 @@
 \titul
 \abstrakty
 \obsah
+
+# Contains list of abrivations
+#+INCLUDE: abbreviations.org

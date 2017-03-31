@@ -2,9 +2,6 @@
 # Definitions of headers
 #+INCLUDE: header.org
 
-# Contains list of abrivations
-#+INCLUDE: abbreviations.org
-
 # Chapter I Introduction
 #+INCLUDE: introduction.org
 
@@ -14,7 +11,7 @@
 # Chapter III for experiment portion
 #+INCLUDE: experiment.org
 
-# 7 Conclusions
+# Conclusions
 #+INCLUDE: conclusions.org
 
 # Footer
