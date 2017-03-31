@@ -2,8 +2,8 @@
   There is wide variety of options for machine learning frameworks in general and also for CNN specifically. Namely there is a variety of tools that are centered around python programming language. All of the frameworks mentioned bellow have at least some support for GPGPU computation.
 
 ** Caffe
-   - Deep learning framework implemented in C++ programming language, that also supports python API.
-   - It was difficult to find any good documentation and in terms of popularity it was not so prominent as some other frameworks in this list.
+  - Deep learning framework implemented in C++ programming language, that also supports python API.
+  - It was difficult to find any good documentation and in terms of popularity it was not so prominent as some other frameworks in this list.
 
 ** Keras
   - Kears is implemented in python and therefore integrates well with the massive Data Science ecosystem that Python is offering. It probably currently has one of the largest communities in deep learning. It has most monthly mentions in Arxiv database, in scientific papers dealing with deep learning.
