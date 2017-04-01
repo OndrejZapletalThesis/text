@@ -1,4 +1,4 @@
-#+TITLE: Master Thesis
+#+TITLE: Thesis
 # Definitions of headers
 #+INCLUDE: header.org
 

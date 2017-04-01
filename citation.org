@@ -1,3 +1,0 @@
-\begin{thebibliography}
-\bibitem{monografie}{Gibiansky, Andrew.: "Andrew Gibiansky   ::   Math → [Code]." Fully Connected Neural Network Algorithms - Andrew Gibiansky. N.p., n.d. Web. 26 Jan. 2017.}
-\end{thebibliography}
