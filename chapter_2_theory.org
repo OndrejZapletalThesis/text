@@ -1,5 +1,14 @@
 * Theory
-# 3 Image Processing
-#+INCLUDE: image_processing.org
-# 4 Convolution Networks
-#+INCLUDE: convolution_networks.org
+
+# 1 Image Processing
+#+INCLUDE: chapter_2_theory__image_processing.org
+# Machine learning
+#+INCLUDE: chapter_2_theory__machine_learning.org
+# Neural Networks
+#+INCLUDE: chapter_2_theory__neural_networks.org
+# Gradient Descent Optimization
+# Stochastic Gradient Descent
+
+
+# 2 Convolution Networks
+#+INCLUDE: chapter_2_theory__convolution_networks.org

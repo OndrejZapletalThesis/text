@@ -1,0 +1,11 @@
+** Machine Learning
+
+*** Task
+
+**** Loss function
+
+**** Optimization
+
+*** Supervised Learning
+*** Unsupervised Learning
+*** Generalization of Machine Learning

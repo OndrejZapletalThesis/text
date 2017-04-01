@@ -3,16 +3,16 @@
 #+INCLUDE: header.org
 
 # Chapter I Introduction
-#+INCLUDE: introduction.org
+#+INCLUDE: chapter_1_introduction.org
 
 # Chapter II for theory portion
-#+INCLUDE: theory.org
+#+INCLUDE: chapter_2_theory.org
 
 # Chapter III for experiment portion
-#+INCLUDE: experiment.org
+#+INCLUDE: chapter_3_experiment.org
 
 # Conclusions
-#+INCLUDE: conclusions.org
+#+INCLUDE: chapter_4_conclusions.org
 
 # Footer
 #+INCLUDE: footer.org

@@ -1,5 +1,5 @@
 * Experiment
 # 5 Application
-#+INCLUDE: application.org
+#+INCLUDE: chapter_3_experiment__application.org
 # 6 Frameworks
-#+INCLUDE: frameworks.org
+#+INCLUDE: chapter_3_experiment__frameworks.org
