@@ -1,10 +1,8 @@
-\newacronym{utc}{UTC}{Coordinated Universal Time}
-\newacronym{adt}{ADT}{Atlantic Daylight Time}
-\newacronym{est}{EST}{Eastern Standard Time}
-\newacronym{nn}{NN}{Neural Netowrk(s)}
-\newacronym{fcnn}{FCNN}{Fully Connected Neural Network}
-\newacronym{cnn}{CNN}{Convolutional Neural Network}
 \newacronym{ai}{AI}{Artificial Intelligence}
-\newacronym{svm}{SVM}{Support Vector Machines}
-\newacronym{som}{SOM}{Self Organizing Maps/}
+\newacronym{cnn}{CNN}{Convolutional Neural Network}
+\newacronym{fcnn}{FCNN}{Fully Connected Neural Network}
 \newacronym{gpgpu}{GPGPU}{General-Purpose computing on Graphics Processing Units}
+\newacronym{mlp}{MLP}{Multilayer Perceptron}
+\newacronym{nn}{NN}{Neural Netowrk}
+\newacronym{som}{SOM}{Self Organizing Map}
+\newacronym{svm}{SVM}{Support Vector Machines}

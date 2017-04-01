@@ -32,9 +32,11 @@
 #+LATEX_HEADER: \fi
 
 # TODO: this only test that adds numbering to heading of lever 4 and more.
-#+LATEX_HEADER: \setcounter{secnumdepth}{4}
-#+LATEX_HEADER: \titleformat{\paragraph} {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
-#+LATEX_HEADER: \titlespacing*{\paragraph} {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+# #+LATEX_HEADER: \setcounter{secnumdepth}{4}
+# #+LATEX_HEADER: \titleformat{\paragraph}
+# #+LATEX_HEADER:  {\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+# #+LATEX_HEADER: \titlespacing*{\paragraph}
+# #+LATEX_HEADER: {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
 
 # Package used for citations
 #+LATEX_HEADER: \usepackage{cite}

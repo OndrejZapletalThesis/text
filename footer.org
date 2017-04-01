@@ -2,5 +2,6 @@
 \bibliographystyle{plain}
 \bibliography{citation}
 # Prints list of acronyms
-\printglossaries
+# \printglossaries
+\printglossary[title=List of Terms]
 # \input{SeznamPriloh}% není povinné
