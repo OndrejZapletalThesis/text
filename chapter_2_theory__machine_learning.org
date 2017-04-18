@@ -1,4 +1,9 @@
 ** Machine Learning
+   It is necessary to properly define machine learning before we move forward. There are many valid definitions that may differ but in this text we will adhere  to the following.
+   Field of Machine learning is a subset of \gls{ai} that is describing tools that can be used to solve problems.
+
+   In order to properly explain
+We will use a definition from \cite{book--goodfellow--2016}
 
 *** Task
 

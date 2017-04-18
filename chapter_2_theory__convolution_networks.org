@@ -19,7 +19,10 @@
 
      Input into Convolutional layer is either image (in case of first network layer) or /feature map/ from previous layer. Kernel is typically of square shape and its width can range from 3 to N pixels (typically 3, 5 or 7). /Feature map/ is created by convolution of kernel over each specified element of input. Convolution is described in more detail in section describing training of CNN.
 
-     Depending on the size of kernel and layer's padding preferences the process of convolution can produce /feature map/ of different size than input. When the size of output should be preserved it is necessary to employ /zero padding/ on the edges of input. /Zero padding/ in this case has to add necessary amount of zero elements around the edges of input. This amount is determined by $$p = ((h - 1) / 2),$$
+     Depending on the size of kernel and layer's padding preferences the process of convolution can produce /feature map/ of different size than input. When the size of output should be preserved it is necessary to employ /zero padding/ on the edges of input. /Zero padding/ in this case has to add necessary amount of zero elements around the edges of input. This amount is determined by
+     \begin{equation}
+     p = ((h - 1) / 2)
+     \end{equation}
 
      where h is width of used kernel. In opposite case the /feature map/ is reduced by the $2*p$. Decreasing of the /feature map/ can be in some cases desirable.
 
@@ -62,11 +65,19 @@
 
       Presuming that input of a layer is of size $N x N$ units and kernel is of size $m x m$. Convolution is computed over $(N-m+1) x (N-m+1)$ units (presuming that there is no zero padding).
 
-      Computation of convolution output $x_{ij}^{(l)}$ is defined as $$ x_{ij}^{(l)}=\sum_{a=0}^{m-1}\sum_{b=0}^{m-1}\omega_{ab}y_{(i+a)(j+b)}^{(l-1)},$$ where $i, j \in (0,N-m+1)$, l is index of current layer, $\omega_{ab}$ are weights of layer (kernel) and $y_{(i+a)(j+b)}^{(l-1)}$ is output of previous layer.
+      Computation of convolution output $x_{ij}^{(l)}$ is defined as
+      \begin{equation}
+     x_{ij}^{(l)}=\sum_{a=0}^{m-1}\sum_{b=0}^{m-1}\omega_{ab}y_{(i+a)(j+b)}^{(l-1)}
+      \end{equation}
+
+ where $i, j \in (0,N-m+1)$, l is index of current layer, $\omega_{ab}$ are weights of layer (kernel) and $y_{(i+a)(j+b)}^{(l-1)}$ is output of previous layer.
 
       Output of convolutional layer $y_{ij}^{(l)}$ is computed by squashing of output of convolution operation $x_{ij}^{(l)}$ through non-linearity:
 
-      $$ y_{ij}^{(l)}=\sigma(x_{ij}^{(l)}),$$ where $\sigma$ represents this non-linear function.
+      \begin{equation}
+      y_{ij}^{(l)}=\sigma(x_{ij}^{(l)})
+      \end{equation}
+where $\sigma$ represents this non-linear function.
 
 ***** Pooling layer (Max-Pooling)
 
@@ -82,26 +93,26 @@
 ***** Convolution Layer
       # To estimate contribution of convolutional layer to the total error of CNN,
       # there needs to be computed gradient of error function
-      Following equasions were lifted from \cite{Goodfellow-et-al-2016}.
+      Following equasions were lifted from \cite{book--goodfellow--2016}.
 
-      $$
+      \begin{equation}
       \frac{\partial E} {\partial \omega_{ab}}
-      =\sum_{i=0}^{N-m} \sum_{j=0}^{N-m} \frac{\partial E}{\partial x_{ij}^{(l)}} \frac{\partial x_{ij}^{(l)}} {\partial \omega_{ab}}
-      =\sum_{i=0}^{N-m} \sum_{j=0}^{N-m} \frac{\partial E}{\partial x_{ij}^{(l)}} y_{(i+a)(j+b)}^{(l-1)}
-      $$
+      =\sum_{i=0}^{N-m} \sum_{j=0}^{N-m} \frac{\partial E}{\partial x_{ij}^{l}} \frac{\partial x_{ij}^{l}} {\partial \omega_{ab}}
+      =\sum_{i=0}^{N-m} \sum_{j=0}^{N-m} \frac{\partial E}{\partial x_{ij}^{l}} y_{(i+a)(j+b)}^{l-1}
+      \end{equation}
 
-      $$
-      \frac{\partial E} {\partial x_{ij}^{((l))}}
-      =\frac{\partial E} {\partial y_{ij}^{(l)}} \frac{\partial y_{ij}^{(l)}} {\partial x_{ij}^{(l)}}
-      =\frac{\partial E} {\partial y_{ij}^{(l)}} \frac{\partial} {\partial x_{ij}^{(l)}} \left( \sigma\left(x_{ij}^{(l)}\right) \right)
-      =\frac{\partial E} {\partial y_{ij}^{(l)}} \sigma' \left( x_{ij}^{(l)} \right)
-      $$
+      \begin{equation}
+      \frac{\partial E} {\partial x_{ij}^{(l)}}
+      =\frac{\partial E} {\partial y_{ij}^{l}} \frac{\partial y_{ij}^{l}} {\partial x_{ij}^{l}}
+      =\frac{\partial E} {\partial y_{ij}^{l}} \frac{\partial} {\partial x_{ij}^{l}} \left( \sigma\left(x_{ij}^{l}\right) \right)
+      =\frac{\partial E} {\partial y_{ij}^{l}} \sigma' \left( x_{ij}^{l} \right)
+      \end{equation}
 
-      $$
-      \frac{\partial E} {\partial y_{ij}^{(l-1)}}
-      =\sum_{a=0}^{m-1} \sum_{b=0}^{m-1} \frac{\partial E} {\partial x_{(i-a)(j-b)}^{(l)}} \frac{\partial x_{(i-a)(j-b)}^{(l)}} {\partial  y_{ij}^{(l-1)}}
-      =\sum_{a=0}^{m-1} \sum_{b=0}^{m-1} \frac{\partial E} {\partial x_{(i-a)(j-b)}^{(l)}} \omega_{ab}
-      $$
+      \begin{equation}
+      \frac{\partial E} {\partial y_{ij}^{l-1}}
+      =\sum_{a=0}^{m-1} \sum_{b=0}^{m-1} \frac{\partial E} {\partial x_{(i-a)(j-b)}^{l}} \frac{\partial x_{(i-a)(j-b)}^{l}} {\partial  y_{ij}^{l-1}}
+      =\sum_{a=0}^{m-1} \sum_{b=0}^{m-1} \frac{\partial E} {\partial x_{(i-a)(j-b)}^{l}} \omega_{ab}
+      \end{equation}
 
 ***** Pooling layer (Max-Pooling)
       As mentioned in section for /forward propagation/, there is no explicit learning process happening in pooling layer. Error is propagated backwards depending on how the signal was propagated forward. In case of /Max-pooling/ layer the error is propagated only to the unit with maximal output in /forward propagation/ phase (in other words to the winner of pooling). The error is propagated very sparsely, as result.

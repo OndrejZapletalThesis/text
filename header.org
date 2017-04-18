@@ -9,27 +9,22 @@
 #+LATEX_HEADER: \usepackage{ucs}
 #+LATEX_HEADER:	\usepackage[utf8x]{inputenc}
 #+LATEX_HEADER:	\PrerenderUnicode{ěščřžýáíéĚŠČŘŽÝÁÍÉďťňĎŤŇůúÚóÓ}
-#+LATEX_HEADER: \usepackage[czech]{babel}
+#+LATEX_HEADER: \usepackage[czech, english]{babel}
 #+LATEX_HEADER: \usepackage[IL2]{fontenc}
 #+LATEX_HEADER: \usepackage[]{diplomka}
 #+LATEX_HEADER: \usepackage[]{VSKP}
 #+LATEX_HEADER: \input{vskp}
 #+LATEX_HEADER: \splithyphens
-#+LATEX_HEADER: \ifx\pdfcompresslevel\undefined
-#+LATEX_HEADER:    \usepackage{graphicx}
-#+LATEX_HEADER:    \DeclareGraphicsExtensions{.bmp,.eps,.png}
-#+LATEX_HEADER: \else
-#+LATEX_HEADER:    \usepackage[pdftitle={\typpracetxt},
+#+LATEX_HEADER: \usepackage[pdftitle={\typpracetxt},
 #+LATEX_HEADER:             pdfauthor={\autortxt},
 #+LATEX_HEADER:             pdftex=true,
-#+LATEX_HEADER:             %bookmarks=true,
+#+LATEX_HEADER:             bookmarks=true,
 #+LATEX_HEADER:             linkcolor=blue,
 #+LATEX_HEADER:             colorlinks=true,
 #+LATEX_HEADER:             breaklinks=true,
 #+LATEX_HEADER:             a4paper]{hyperref}
-#+LATEX_HEADER:    \usepackage[pdftex]{graphicx}
-#+LATEX_HEADER:    \DeclareGraphicsExtensions{.png,.pdf}
-#+LATEX_HEADER: \fi
+#+LATEX_HEADER: \usepackage[pdftex]{graphicx}
+#+LATEX_HEADER: \DeclareGraphicsExtensions{.png,.pdf}
 
 # TODO: this only test that adds numbering to heading of lever 4 and more.
 # #+LATEX_HEADER: \setcounter{secnumdepth}{4}
@@ -50,6 +45,10 @@
 # This is also from VUT template but this is exported within document body
 \titul
 \abstrakty
+
+\prohlaseni{Prohlašuji, že jsem to všechno opsal a vlastními chybami opatřil.}% prohlášení,
+\podekovani{Děkuji všem, kteří mi pomohli okopírovat to, co jsem potom opsal.}% poděkování, nepovinné
+
 \obsah
 
 # Contains list of abrivations

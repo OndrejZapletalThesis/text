@@ -1,4 +1,5 @@
 * Theory
+In this chapter will dicussed concepts of Image processing, Machine learning in general, Neural networks and finaly the Convolutional neural networks.
 
 # 1 Image Processing
 #+INCLUDE: chapter_2_theory__image_processing.org
